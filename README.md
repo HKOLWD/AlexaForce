@@ -1,7 +1,11 @@
 # AlexaForce
-AlexaForce is an Alexa Skill SDK for Salesforce
+AlexaForce is an Alexa Skill SDK for Salesforce. Amazon Alexa is the sweet voiced AI assistant (https://www.youtube.com/watch?v=r5p0gqCIEa8), Salesforce is the worlds leading cloud platform provider (https://developer.salesforce.com/). 
 
-The skill is available for beta testing by installing the AlexaForce managed package.
+Currently, all Alexa skill implementations that integrate with Salesforce, require an external (from a Salesforce perspective) endpoint to host the skill and a "foreign" programming language to implement (e.g. using the Java and Node.jks SDK's). The consequence is a lot of API back and forth to deal with Salesforce operations. 
+
+Not anymore. AlexaForce let's you define Alexa Skills, straight on your Salesforce.com org, using APEX!
+
+The AlexaForce SDK is available for beta testing by installing the managed package.
 
 For developer orgs: https://login.salesforce.com/packaging/installPackage.apexp?p0=04t0N000000SDvB
 
@@ -79,7 +83,9 @@ Go to the Custom Metadata Types section of the Setup menu in Salesforce, under B
 
 Enabling Debug Mode will generate log entries per request in the custom object Request_Log__c. Each Request_Log__c has several child Log_Entry__c records containing information about the conversation. In your APEX class you can add logs yourself using the method createLog(String title, String message). Debug Mode must be enabled for createLog(String title, String msg) to actually output something!
 
-Perform Security Checks is only required when you want to submit your skill for Certification. If you do, be aware that the current security checks are being performed on an unauthenticated Heroku.com endpoint (https://alexa-verifier.herokuapp.com/verify). The endpoint may be suspended at any time and no support is provided. You can host your own verification endpoint though. In this case, implement the checks that are defined here: https://developer.amazon.com/docs/custom-skills/host-a-custom-skill-as-a-web-service.html. Take note that your endpoint does not need to perform the URL testing defined, AlexaForce does this part! If you have your own verification endpoint, set configure the endpoint appropriately in the custom meta data.
+Perform Security Checks is only required when you want to submit your skill for Certification. If you do, be aware that the current security checks are being performed on an unauthenticated Heroku.com endpoint (https://alexa-verifier.herokuapp.com/verify). The endpoint may be suspended at any time and no support is provided. You will have to take my word it's not storing any of the data passed to it. Unfortunately, Salesforce does not appear to be able to validate the certificate using APEX.
+
+You can host your own verification endpoint, though. In this case, implement the checks that are defined here: https://developer.amazon.com/docs/custom-skills/host-a-custom-skill-as-a-web-service.html. Take note that your endpoint does not need to perform the URL testing defined, AlexaForce does this part! If you have your own verification endpoint, set configure the endpoint appropriately in the custom meta data.
 
 An example of the required verification is included in this git repo (alexa-verifier), in Node.js.
 
