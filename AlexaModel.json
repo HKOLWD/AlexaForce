@@ -1,0 +1,82 @@
+{
+  "languageModel": {
+    "types": [
+      {
+        "name": "EchoWord",
+        "values": [
+          {
+            "id": null,
+            "name": {
+              "value": "hello",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "hello there",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "hi",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "hi there",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "some words",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "echo",
+              "synonyms": []
+            }
+          }
+        ]
+      }
+    ],
+    "intents": [
+      {
+        "name": "AMAZON.CancelIntent",
+        "samples": []
+      },
+      {
+        "name": "AMAZON.HelpIntent",
+        "samples": []
+      },
+      {
+        "name": "AMAZON.StopIntent",
+        "samples": []
+      },
+      {
+        "name": "EchoIntent",
+        "samples": [
+          "repeat {EchoWord}",
+          "please repeat {EchoWord}",
+          "repeat {EchoWord} please"
+        ],
+        "slots": [
+          {
+            "name": "EchoWord",
+            "type": "EchoWord"
+          }
+        ]
+      }
+    ],
+    "invocationName": "alexaforce sample"
+  }
+}
