@@ -100,34 +100,34 @@ Here's a brief summary of the information available inside your APEX handler cla
 ## alexaforce.AlexaForce 
 ### Properties
 ```
-global alexaforce.SessionDataManager SessionData;
-global alexaforce.DirectiveManager Directives;
-global String applicationId;
-global alexaforce.Alexa_Skill__mdt alexaSkillConfig;
-global AuthUser authUser;
-global String userId;
-global String requestId;
+global alexaforce.SessionDataManager SessionData; // Use to set and get session data
+global alexaforce.DirectiveManager Directives; // Use to return Directives
+global String applicationId; 
+global alexaforce.Alexa_Skill__mdt alexaSkillConfig; // Contains your custom meta data entry
+global alexaforce.AuthUser authUser; // Contains all basic openid properties, e.g. authUser.user_id and authUser.email
+global String userId; // Contains the Alexa user id
+global String requestId; // Contains the request id
 ```
 ### Methods
 ```
-global virtual alexaforce.Model.AlexaResponseBody handleRequest(alexaforce.Model.AlexaRequest request);
-global void createLog(String title, String msg);
+global virtual alexaforce.Model.AlexaResponseBody handleRequest(alexaforce.Model.AlexaRequest request); // Must be implemented for your skill
+global void createLog(String title, String msg); // Use to write log entries inside your skill
 ```
 ## alexaforce.SessionDataManager
 ### Methods
 ```
-global void setSessionAttribute(String key, Object value);
-global void removeSessionAttribute(String key);
-global Object getSessionAttribute(String key);
-global Map<String, Object> getSessionAttributes();
+global void setSessionAttribute(String key, Object value); // Adds a session data entry. E.g. SessionData.setSessionAttribute('InteractionCount', 1);
+global void removeSessionAttribute(String key); // Removes the session attribute. 
+global Object getSessionAttribute(String key); // Fetches a session attribute. E.g. Integer count = (Integer) SessionData.getSessionAttribute(InteractionCount);
+global Map<String, Object> getSessionAttributes(); // Returns the full map of current session attributes.
 ```
 ## alexaforce.DirectiveManager
 ### Methods
 ```
-global void setDirective(alexaforce.Model.AlexaDirective directive, List<alexaforce.Model.AlexaSlot> slots);
-global void setDirective(alexaforce.Model.AlexaDirective directive);
-global void removeDirective(alexaforce.Model.AlexaDirective directive);
-global Map<alexaforce.Model.AlexaDirective, List<alexaforce.Model.AlexaSlot>> getDirectives();
+global void setDirective(alexaforce.Model.AlexaDirective directive, List<alexaforce.Model.AlexaSlot> slots); // Sets a response Directive with Slots
+global void setDirective(alexaforce.Model.AlexaDirective directive); // Sets a response Directive without slots
+global void removeDirective(alexaforce.Model.AlexaDirective directive);  // Removes the directive from the response
+global Map<alexaforce.Model.AlexaDirective, List<alexaforce.Model.AlexaSlot>> getDirectives(); // Returns a full list of all current Directives in queue.
 ```
 
 
