@@ -1,0 +1,14 @@
+{
+  "name": "alexa-verifier",
+  "version": "1.0.1",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node index.js"
+  },
+  "dependencies": {
+    "alexa-verifier": "^1.0.0",
+    "crypto": "0.0.3",
+    "restify": "^4.3.2"
+  }
+}
