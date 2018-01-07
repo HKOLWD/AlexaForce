@@ -37,9 +37,11 @@ Once the site has been created, go to the Public Access Settings page. Under Ena
 # Step 3: Create an Alexa Skill on Amazon
 Here's where all the Alexa magic happens. Log in to your Amazon developer account and find the Alexa Skills option. From your dashboard, go to Alexa -> Alexa Skills Kit. Here, click "Add a new skill". Take down the application id, which you can find in the header, or in the Skill information form. You will need it later.
 
-A skill consists of several parts, Amazon's will guide you through the required steps. Some steps are optional, for example the Certification questions. Although AlexaForce fully supports certification of a skill, this is not required for skills in development or for demo purposes. Other steps are crucial, for example the wake word, and the interaction model. In the git repo you will find the JSON definition of the model that can be used with the provided APEX Sample Skill (AlexaModel.json). The model you create ultimately defines code you need to write to interact with it.
+A skill consists of several parts, Amazon's will guide you through the required steps. Some steps are optional, for example the Certification questions. Although AlexaForce fully supports certification of a skill, this is not required for skills in development or for demo purposes. 
 
-Alexa also allows you to define Dialogs, that allow you to put more of the control of the interaction between Alexa and the user inside the model. For example, you can let the model handle reprompting for required slots and determine completion of an Intent. AlexaForce supports both a Dialog model and a simpler JSON model.
+Other steps are crucial, for example the wake word, and the interaction model. In the git repo you will find the JSON definition of the model that can be used with the provided APEX Sample Skill (AlexaModel.json). The model you create ultimately defines the APEX code you need to write to interact with it. The more complex the model, the more elaborate your APEX handler should be. A lot of the handling can be outsourced to Amazon though, if you use a Dialog model.
+
+Alexa also allows you to define Dialogs, that allow you to put more of the control of the interaction between Alexa and the user inside the model. For example, you can let the model handle reprompting for required slots and determine completion of an Intent. AlexaForce supports both a Dialog model (using Directives) and a simpler JSON model.
 
 Make sure to fully setup the configuration. Once all checkboxes are lit, you're done. The following parts are required to wire up the Alexa model with your Salesforce skill.
 
