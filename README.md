@@ -100,6 +100,8 @@ Your skill should now work. Enable the skill in your companion app. This compani
 
 Test your skill using your Echo device, if you have one, or in the browser in the Test section of the skill definition in the Alexa Developer Portal.
 
+Modify the APEX code and Alexa should immediately produce the changed response. 
+
 # AlexaForce APEX API Reference
 Here's a brief summary of the information available inside your APEX handler class from the extended AlexaForce class.
 
