@@ -67,7 +67,11 @@ http://your-domain-developer-edition.eu8.force.com/services/apexrest/alexaforce/
 When saving this endpoint, you will need to select the type of certificate that should be used. Select "My development endpoint is a sub-domain of a domain that has a wildcard certificate from a certificate authority" and save.
 
 ## Optional: Account linking
-It is possible to link Salesforce users (e.g. customer community) to the Alexa skill. This allows for even more control over the output of your skill. Alexa is fully compatible with the Salesforce oauth routines and AlexaForce fully supports authicating users. If you set up account linking, make sure to handle the authentication status accordingly in your skill. AlexaForce will provide you with the information about the user and whether authentication succeeded in the first place. Make sure to define the userinfo endpoint in your Custom Metadata in the subsequent steps. It resides on your main (not the site or community) salesforce domain (must end with salesforce.com!!), suffixed with /services/oauth2/userinfo
+It is possible to link Salesforce users (e.g. customer community) to the Alexa skill. This allows for even more control over the output of your skill. Alexa is fully compatible with the Salesforce oauth routines and AlexaForce fully supports authicating users. 
+
+If you set up account linking, make sure to handle the authentication status accordingly in your skill. AlexaForce will provide you with the information about the user and whether authentication succeeded in the first place. 
+
+Make sure to define the userinfo endpoint in your Salesforce custom metadata in step 6. It resides on your main (not the site or community) salesforce domain (must end with salesforce.com!!), suffixed with /services/oauth2/userinfo
 
 # Step 5: Create the APEX class in Salesforce
 To implement the handling of the Alexa requests on your Salesforce org, you will need to write an APEX class which extends alexaforce.AlexaForce. You can find an example in the classes folder of this git repo. It includes comments to get you up and running. If you used the model from this git report (AlexaModel.json), the SampleSkill.cls should work instantly.
