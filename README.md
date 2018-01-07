@@ -41,7 +41,7 @@ A skill consists of several parts, Amazon's will guide you through the required 
 
 Other steps are crucial, for example the wake word (what word does the user say to activate your skill?), and the interaction model (what kind of input does your skill require and what user intents (e.g. look up a record, or create a Case in Salesforce) is your skill looking for?. 
 
-In the git repo you will find the JSON definition of the model that can be used with the provided APEX Sample Skill (AlexaModel.json). The model you create ultimately defines the APEX code you need to write to interact with it. The more complex the model, the more elaborate your APEX handler should be. A lot of the handling can be outsourced to Amazon though, if you use a Dialog model.
+In the git repo you will find the JSON definition of the model (AlexaModel.json) that can be used with the provided APEX Sample Skill (classes/SampleSkill.cls). The model you create ultimately defines the APEX code you need to write to interact with it. The more complex the model, the more elaborate your APEX handler should be. A lot of the handling can be outsourced to Amazon though, if you use a Dialog model.
 
 Alexa also allows you to define Dialogs, that allow you to put more of the control of the interaction between Alexa and the user inside the model. For example, you can let the model handle reprompting for required slots and determine completion of an Intent. AlexaForce supports both a Dialog model (using Directives) and a simpler JSON model (like the SampleSkill).
 
