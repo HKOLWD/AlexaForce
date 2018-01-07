@@ -23,7 +23,9 @@ To sign up for a Developer org, visit: https://developer.salesforce.com
 Get an Amazon dev account here: https://developer.amazon.com
 
 # Setup Instructions
-To use AlexaForce, the following steps need to be performed to start building Alexa Skills on Salesforce in no time!
+To use AlexaForce, the following steps need to be performed to start building Alexa Skills on Salesforce in no time! 
+
+Once you have performed these steps, any new skills you create on the same Salesforce org, only require you to repeat steps 3, 4 and 5.
 
 # Step 1: Install the managed package
 Log in to your developer or sandbox org and install the package.
