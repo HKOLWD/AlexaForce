@@ -1,5 +1,9 @@
 # AlexaForce
-AlexaForce is an Alexa Skill SDK for Salesforce. Amazon Alexa is the sweet voiced AI assistant (https://www.youtube.com/watch?v=r5p0gqCIEa8), Salesforce is the worlds leading cloud platform provider (https://developer.salesforce.com/). 
+AlexaForce is an Alexa Skill SDK for Salesforce. 
+
+Alexa is the sweet voiced AI assistant (https://www.youtube.com/watch?v=r5p0gqCIEa8) of Amazon.
+
+Salesforce is the world's leading cloud platform provider (https://developer.salesforce.com/). 
 
 Currently, all Alexa skill implementations that integrate with Salesforce, require an external (from a Salesforce perspective) endpoint to host the skill and a "foreign" programming language to implement (e.g. using the Java and Node.jks SDK's). The consequence is a lot of API back and forth to deal with Salesforce operations. 
 
