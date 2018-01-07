@@ -52,6 +52,7 @@ global class SampleSkill extends alexaforce.AlexaForce {
         return resp;
 
     }
+    //
 	// Sample session ended handler. 
 	// This will be fired when alexaforce.Model.AlexaRequest.type = 'SessionEndedRequest'
 	// Fired in cases of errors (self-inflicted session end) or user commands
@@ -117,6 +118,7 @@ global class SampleSkill extends alexaforce.AlexaForce {
     }
     //
     // The default reponse in case an unsupported Request type is presented by Alexa
+    // Uses a card
     private alexaforce.Model.AlexaResponseBody getDefaultResponse(alexaforce.Model.AlexaRequest req) {
         alexaforce.Model.AlexaResponseBody resp =  new alexaforce.Model.AlexaResponseBody();
         resp.outputSpeech = new alexaforce.Model.AlexaSpeechResponse();
