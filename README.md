@@ -79,7 +79,10 @@ Go to the Custom Metadata Types section of the Setup menu in Salesforce, under B
 
 ![alt text](https://alexaforce-sdk-dev-ed--c.eu8.content.force.com/servlet/servlet.ImageServer?id=0150N000006TBXz&oid=00D0N000000h00x "Sample Skill")
 
+# Test!
+Your skill should now work. Enable the skill in your companion app. This companion app is also available in your browser, under Alexa -> Alexa Voice Service in the Amazon Developer portal. 
 
+Test your skill using your Echo device, if you have one, or in the browser in the Test section of the skill definition in the Alexa Developer Portal.
 
 
 
