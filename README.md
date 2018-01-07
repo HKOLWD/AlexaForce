@@ -47,9 +47,7 @@ Once the site has been created, go to the Public Access Settings page. Under Ena
 # Step 3: Create an Alexa Skill on Amazon
 Here's where all the Alexa magic happens. Log in to your Amazon developer account and find the Alexa Skills option. From your dashboard, go to Alexa -> Alexa Skills Kit. Here, click "Add a new skill". Take down the application id, which you can find in the header, or in the Skill information form. You will need it later.
 
-Make sure to fully setup the configuration. Once all checkboxes are lit, you're done. 
-
-A skill consists of several parts, Amazon's will guide you through the required steps. Some steps are optional, for example the Certification questions. Although AlexaForce fully supports certification of a skill, this is not required for skills in development or for demo purposes. 
+A skill consists of several parts, Amazon's will guide you through the required steps. Once all checkboxes are lit, you're done. Some steps are optional, for example the Certification questions. Although AlexaForce fully supports certification of a skill, this is not required for skills in development or for demo purposes. 
 
 Other steps are crucial, for example the wake word (what word does the user say to activate your skill?), and the interaction model (what kind of input does your skill require and what user intents (e.g. look up a record, or create a Case in Salesforce) is your skill looking for?
 
