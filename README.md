@@ -94,6 +94,44 @@ Your skill should now work. Enable the skill in your companion app. This compani
 
 Test your skill using your Echo device, if you have one, or in the browser in the Test section of the skill definition in the Alexa Developer Portal.
 
+# AlexaForce APEX API Reference
+Here's a brief summary of the information available inside your APEX handler class from the extended AlexaForce class.
+
+## alexaforce.AlexaForce 
+### Properties
+```
+global alexaforce.SessionDataManager SessionData;
+global alexaforce.DirectiveManager Directives;
+global String applicationId;
+global alexaforce.Alexa_Skill__mdt alexaSkillConfig;
+global AuthUser authUser;
+global String userId;
+global String requestId;
+```
+### Methods
+```
+global virtual alexaforce.Model.AlexaResponseBody handleRequest(alexaforce.Model.AlexaRequest request);
+global void createLog(String title, String msg);
+```
+## alexaforce.SessionDataManager
+### Methods
+```
+global void setSessionAttribute(String key, Object value);
+global void removeSessionAttribute(String key);
+global Object getSessionAttribute(String key);
+global Map<String, Object> getSessionAttributes();
+```
+## alexaforce.DirectiveManager
+### Methods
+```
+global void setDirective(alexaforce.Model.AlexaDirective directive, List<alexaforce.Model.AlexaSlot> slots);
+global void setDirective(alexaforce.Model.AlexaDirective directive);
+global void removeDirective(alexaforce.Model.AlexaDirective directive);
+global Map<alexaforce.Model.AlexaDirective, List<alexaforce.Model.AlexaSlot>> getDirectives();
+```
+
+
+
 
 
 
