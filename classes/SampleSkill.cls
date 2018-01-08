@@ -42,8 +42,10 @@ global class SampleSkill extends alexaforce.AlexaForce {
         alexaforce.Model.AlexaResponseBody resp =  new alexaforce.Model.AlexaResponseBody();
         resp.outputSpeech = new alexaforce.Model.AlexaSpeechResponse();
         resp.outputSpeech.type = 'SSML';
-        resp.outputSpeech.ssml = '<speak><prosody pitch="x-high">Hello there my friend.</prosody></speak>';
-        resp.outputSpeech.ssml += '<emphasis level="strong">This is just a sample skill! I can echo your words. Say repeat to have me repeat you.</emphasis></speak>';    
+        resp.outputSpeech.ssml = '<speak>';
+        resp.outputSpeech.ssml += '<prosody pitch="x-high">Hello there my friend.</prosody>';
+        resp.outputSpeech.ssml += '<emphasis level="strong">This is just a sample skill! I can echo your words. Say repeat to have me repeat you.</emphasis>';
+        resp.outputSpeech.ssml += '</speak>';    
         resp.card = new alexaforce.Model.AlexaCard();
         resp.card.type = 'Simple';
         resp.card.title = 'My Sample AlexaForce Skill';
