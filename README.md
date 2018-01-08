@@ -40,14 +40,18 @@ In Salesforce, enter the Setup menu and find the option Build -> Develop -> Site
 Create a new site and choose the domain name of your liking. Take down the domain name, as you will need it later. It should look something like 
 http://your-domain-developer-edition.eu8.force.com/alexa (if you added a default web address suffix 'alexa') or http://your-domain-developer-edition.eu8.force.com/ (if you left the suffix empty)
 
-As the Active Site Home Page, choose the standard Under Construction page.
+As the Active Site Home Page, choose the standard "Under Construction" page.
 
-Once the site has been created, go to the Public Access Settings page. Under Enabled Apex Classes, add alexaforce.Listener.  
+Once the site has been created, go to the Public Access Settings page. Under Enabled Apex Classes, add alexaforce.Listener. 
+
+Make sure to activate the site.
 
 # Step 3: Create an Alexa Skill on Amazon
 Here's where all the Alexa magic happens. Log in to your Amazon developer account and find the Alexa Skills option. From your dashboard, go to Alexa -> Alexa Skills Kit. Here, click "Add a new skill". Take down the application id, which you can find in the header, or in the Skill information form. You will need it later.
 
-A skill consists of several parts, Amazon's will guide you through the required steps. Once all checkboxes are lit, you're done. Some steps are optional, for example the Certification questions. Although AlexaForce fully supports certification of a skill, this is not required for skills in development or for demo purposes. 
+A skill definition consists of several parts. Amazon's will guide you through the required steps. Once all the checkboxes are lit, you're done. 
+
+Some steps are optional, for example the Certification questions. Although AlexaForce fully supports certification of a skill, this is not required for skills in development or for demo purposes. 
 
 Other steps are crucial, for example the wake word (what word does the user say to activate your skill?), and the interaction model (what kind of input does your skill require and what user intents (e.g. look up a record, or create a Case in Salesforce) is your skill looking for)?
 
@@ -78,7 +82,7 @@ If you set up account linking, make sure to handle the authentication status acc
 Make sure to define the userinfo endpoint in your Salesforce custom metadata in step 5. It resides on your main (not the site or community) salesforce domain (must end with salesforce.com!!), suffixed with /services/oauth2/userinfo. You should add this endpoint in Salesforce as a Remote Site.
 
 # Step 4: Create the APEX class in Salesforce
-To implement the handling of the Alexa requests on your Salesforce org, you will need to write an APEX class which extends alexaforce.AlexaForce. You can find an example in the classes folder of this git repo. It includes comments to get you up and running. If you used the model from this git report (AlexaModel.json), the SampleSkill.cls should work instantly.
+To implement the handling of the Alexa requests on your Salesforce org, you will need to write an APEX class which extends alexaforce.AlexaForce. You can find an example in the classes folder of this git repo. It includes comments to get you up and running. If you used the model from this git repo (AlexaModel.json), the SampleSkill.cls should work instantly.
 
 Go to the Setup menu. Find Build -> Develop -> Apex Classes and create a new Apex Class extending the alexaforce.AlexaForce class.
 
