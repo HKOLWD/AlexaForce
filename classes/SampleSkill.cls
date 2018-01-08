@@ -97,7 +97,7 @@ global class SampleSkill extends alexaforce.AlexaForce {
         String replyText;
         if(req.intent.name == 'EchoIntent') {
             //
-            // Handle EchoRequest intent, see if we can find an EchoWord slot match
+            // Handle EchoIntent intent, see if we can find an EchoWord slot match
             Map<String, alexaforce.Model.AlexaSlot> matchedSlots = req.intent.slotMap;
             if(matchedSlots.containsKey('EchoWord')) {
             	alexaforce.Model.AlexaSlot slot = matchedSlots.get('EchoWord');    
@@ -109,7 +109,8 @@ global class SampleSkill extends alexaforce.AlexaForce {
                 // types where the confirmation could come from your
                 // slot type values defined in the model or Dialog.
             }
-        } else {
+        } 
+        if(replyText==null) {
         	replyText = 'I am not sure what you want. Say repeat to have me repeat a word';   
         }        
         resp.outputSpeech = new alexaforce.Model.AlexaSpeechResponse();
