@@ -1,23 +1,23 @@
 global class SampleSkill extends alexaforce.AlexaForce {
-	//
-	// This is the AlexaForce method that must be implemented. 
-	// alexaforce.Model.AlexaResponseBody handleRequest(alexaforce.Model.AlexaRequest req)
-	// 
-	// It will be passed a Request, containing all relevant information from Alexa 
-	// For more information, see alexaforce.Model
-	// 
-	// The method should return the response body of type alexaforce.Model.AlexaResponseBody
-	// 
-	// The directives and session attributes are added automatically, they should be 
-	// managed with respectively AlexaForce.Directives and AlexaForce.SessionData available
-	// in the handler
-	// 
-	// The response can use cards, reprompts, ssml and directives (e.g. Dialog.Delegate)
-	// Make sure to manage the alexaforce.Model.AlexaResponseBody.shouldEndSession boolean correctly!
-	// 
-	// If your skill uses account linking, the logged in user is found in 
-	// AlexaForce.authUser. This property will be null in case the user could
-	// not be verified (i.e. bad token) or when no account linking has been set up
+    //
+    // This is the AlexaForce method that must be implemented. 
+    // alexaforce.Model.AlexaResponseBody handleRequest(alexaforce.Model.AlexaRequest req)
+    // 
+    // It will be passed a Request, containing all relevant information from Alexa 
+    // For more information, see alexaforce.Model
+    // 
+    // The method should return the response body of type alexaforce.Model.AlexaResponseBody
+    // 
+    // The directives and session attributes are added automatically, they should be 
+    // managed with respectively AlexaForce.Directives and AlexaForce.SessionData available
+    // in the handler
+    // 
+    // The response can use cards, reprompts, ssml and directives (e.g. Dialog.Delegate)
+    // Make sure to manage the alexaforce.Model.AlexaResponseBody.shouldEndSession boolean correctly!
+    // 
+    // If your skill uses account linking, the logged in user is found in 
+    // AlexaForce.authUser. This property will be null in case the user could
+    // not be verified (i.e. bad token) or when no account linking has been set up
     global override alexaforce.Model.AlexaResponseBody handleRequest(alexaforce.Model.AlexaRequest req) {
         alexaforce.Model.AlexaResponseBody resp;
         createLog('##In Handler## Received '+req.type, String.valueOf(req));
@@ -33,16 +33,16 @@ global class SampleSkill extends alexaforce.AlexaForce {
         createLog('##In Handler## Responding to '+req.type, String.valueOf(resp));
         return resp;
     }
-	//
-	// Sample launch request that keeps the session open and uses SSML to respond to the skill invocation.
-	// This will be fired when alexaforce.Model.AlexaRequest.type = 'LaunchRequest' (i.e. invocation word 
-	// was spoken, but did not Alexa recognize an intent from your model
-	// Demonstrates use of an alexaforce.Model.AlexaCard and SSML in your response
+    //
+    // Sample launch request that keeps the session open and uses SSML to respond to the skill invocation.
+    // This will be fired when alexaforce.Model.AlexaRequest.type = 'LaunchRequest' (i.e. invocation word 
+    // was spoken, but did not Alexa recognize an intent from your model
+    // Demonstrates use of an alexaforce.Model.AlexaCard and SSML in your response
     private alexaforce.Model.AlexaResponseBody getLaunchRequestResponse(alexaforce.Model.AlexaRequest req) {
         alexaforce.Model.AlexaResponseBody resp =  new alexaforce.Model.AlexaResponseBody();
         resp.outputSpeech = new alexaforce.Model.AlexaSpeechResponse();
         resp.outputSpeech.type = 'SSML';
-        resp.outputSpeech.ssml = '<speak><prosody pitch="x-high">Hello there my friend.</prosody>';
+        resp.outputSpeech.ssml = '<speak><prosody pitch="x-high">Hello there my friend.</prosody></speak>';
         resp.outputSpeech.ssml += '<emphasis level="strong">This is just a sample skill! I can echo your words. Say repeat to have me repeat you.</emphasis>';    
         resp.card = new alexaforce.Model.AlexaCard();
         resp.card.type = 'Simple';
@@ -53,9 +53,9 @@ global class SampleSkill extends alexaforce.AlexaForce {
 
     }
     //
-	// Sample session ended handler. 
-	// This will be fired when alexaforce.Model.AlexaRequest.type = 'SessionEndedRequest'
-	// Fired in cases of errors (self-inflicted session end) or user commands
+    // Sample session ended handler. 
+    // This will be fired when alexaforce.Model.AlexaRequest.type = 'SessionEndedRequest'
+    // Fired in cases of errors (self-inflicted session end) or user commands
     private alexaforce.Model.AlexaResponseBody getSessionEndedResponse(alexaforce.Model.AlexaRequest req) {
         alexaforce.Model.AlexaResponseBody resp =  new alexaforce.Model.AlexaResponseBody();
         resp.outputSpeech = new alexaforce.Model.AlexaSpeechResponse();
@@ -64,21 +64,21 @@ global class SampleSkill extends alexaforce.AlexaForce {
         resp.shouldEndSession = true;
         return resp;
     }
-	//
-	// Sample intent handler. 
-	// This will be fired when alexaforce.Model.AlexaRequest.type = 'IntentRequest'
-	// Along with the intent, slots will be passed to the skill. They contain
-	// the slots from your Alexa model and are contained in a map, as shown in the sample.	
+    //
+    // Sample intent handler. 
+    // This will be fired when alexaforce.Model.AlexaRequest.type = 'IntentRequest'
+    // Along with the intent, slots will be passed to the skill. They contain
+    // the slots from your Alexa model and are contained in a map, as shown in the sample.	
     private alexaforce.Model.AlexaResponseBody getIntentRequestResponse(alexaforce.Model.AlexaRequest req) {
         alexaforce.Model.AlexaResponseBody resp =  new alexaforce.Model.AlexaResponseBody();
-		//
-		// Make sure to gracefully handle all incoming intent types
-		// these are defined in your model. Some are required by Alexa
-		// for example the 3 below
+    	//
+    	// Make sure to gracefully handle all incoming intent types
+    	// these are defined in your model. Some are required by Alexa
+    	// for example the 3 below
         if(req.intent.name == 'AMAZON.CancelIntent') {
-			//
-			// When the user invokes a cancel-word
-			return getSessionEndedResponse(req);
+    		//
+    		// When the user invokes a cancel-word
+    		return getSessionEndedResponse(req);
         }
         if(req.intent.name == 'AMAZON.HelpIntent') {
             //
@@ -86,12 +86,12 @@ global class SampleSkill extends alexaforce.AlexaForce {
             return getLaunchRequestResponse(req);
         }
         if(req.intent.name == 'AMAZON.StopIntent') {
-			//
-			// When the user invokes a stop-word
-			return getSessionEndedResponse(req);
+    		//
+    		// When the user invokes a stop-word
+    		return getSessionEndedResponse(req);
         }
-		//
-		// Handle the sample skill's EchoIntent
+    	//
+    	// Handle the sample skill's EchoIntent
         String replyText;
         if(req.intent.name == 'EchoIntent') {
             //

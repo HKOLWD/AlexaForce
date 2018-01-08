@@ -49,11 +49,11 @@ Here's where all the Alexa magic happens. Log in to your Amazon developer accoun
 
 A skill consists of several parts, Amazon's will guide you through the required steps. Once all checkboxes are lit, you're done. Some steps are optional, for example the Certification questions. Although AlexaForce fully supports certification of a skill, this is not required for skills in development or for demo purposes. 
 
-Other steps are crucial, for example the wake word (what word does the user say to activate your skill?), and the interaction model (what kind of input does your skill require and what user intents (e.g. look up a record, or create a Case in Salesforce) is your skill looking for?
+Other steps are crucial, for example the wake word (what word does the user say to activate your skill?), and the interaction model (what kind of input does your skill require and what user intents (e.g. look up a record, or create a Case in Salesforce) is your skill looking for)?
 
 In the git repo you will find the JSON definition of the model (AlexaModel.json) that can be used with the provided APEX Sample Skill (classes/SampleSkill.cls). The model you create ultimately defines the APEX code you need to write to interact with it. The more complex the model, the more elaborate your APEX handler should be. A lot of the handling can be outsourced to Amazon though, if you use a Dialog model.
 
-Alexa also allows you to define a Dialog model (currently in beta), Dialogs put more of the control of the interaction between Alexa and the user inside the model, and therefore generally require less APEX code. For example, you can let the model handle reprompting for required slots and determine completion of an Intent. AlexaForce supports both a Dialog model (using Directives) and a simpler JSON model (like the SampleSkill).
+Alexa allows you to define a Dialog model (currently in beta), Dialogs put more of the control of the interaction between Alexa and the user inside the model, and therefore generally require less APEX code. For example, you can let the model handle reprompting for required slots and determine completion of an Intent. AlexaForce supports both a Dialog model (using Directives) and a simpler JSON model (like the SampleSkill).
 
 The following parts are required to wire up the Alexa model with your Salesforce skill.
 
