@@ -79,7 +79,7 @@ It is possible to link Salesforce users (e.g. customer community) to the Alexa s
 
 If you set up account linking, make sure to handle the authentication status accordingly in your skill. AlexaForce will provide you with the information about the user and whether authentication succeeded in the first place. 
 
-Make sure to define the userinfo endpoint in your Salesforce custom metadata in step 5. It resides on your main (not the site or community) salesforce domain (must end with salesforce.com!!), suffixed with /services/oauth2/userinfo. You should add this endpoint in Salesforce as a Remote Site in the Setup menu, at Administer -> Security Controls -> Remote Site Settings.
+Make sure to define the userinfo endpoint in your Salesforce custom metadata in step 5. It resides on your main (not the site or community) salesforce domain (must end with salesforce.com!!), suffixed with /services/oauth2/userinfo. 
 
 # Step 4: Create the APEX class in Salesforce
 To implement the handling of the Alexa requests on your Salesforce org, you will need to write an APEX class which extends alexaforce.AlexaForce. You can find an example in the classes folder of this git repo. It includes comments to get you up and running. If you used the model from this git repo (AlexaModel.json), the SampleSkill.cls should work instantly.
@@ -97,7 +97,7 @@ Perform Security Checks is only required when you want to submit your skill for 
 
 The good news is: You can host your own verification endpoint! To do so, you will need to implement the checks that are defined here: https://developer.amazon.com/docs/custom-skills/host-a-custom-skill-as-a-web-service.html. Take note that your endpoint does not need to perform the URL testing defined (port, path, host), AlexaForce does this part! 
 
-If you have your own verification endpoint, configure the endpoint appropriately in the custom meta data entry. An example of the required verification REST service is included in this git repo (alexa-verifier), in Node.js.
+If you have your own verification endpoint, configure the endpoint appropriately in the custom meta data entry. An example of the required verification REST service is included in this git repo (alexa-verifier), in Node.js. You must add this endpoint in Salesforce as a Remote Site in the Setup menu, at Administer -> Security Controls -> Remote Site Settings.
 
 # Test!
 Your skill should now work. Enable the skill in your companion app. This companion app is also available in your browser, under Alexa -> Alexa Voice Service in the Amazon Developer portal. 
@@ -116,7 +116,7 @@ global alexaforce.SessionDataManager SessionData; // Use to set and get session 
 global alexaforce.DirectiveManager Directives; // Use to return Directives
 global String applicationId; 
 global alexaforce.Alexa_Skill__mdt alexaSkillConfig; // Contains your custom meta data entry
-global alexaforce.AuthUser authUser; // Contains all basic openid properties, e.g. authUser.user_id and authUser.email
+global alexaforce.AuthUser authUser; // Contains all basic openid properties, e.g. authUser.user_id and authUser.email, null if no account linking or  authentication failure 
 global String userId; // Contains the Alexa user id
 global String requestId; // Contains the request id
 ```
