@@ -51,7 +51,7 @@ Here's where all the Alexa magic happens. Log in to your Amazon developer accoun
 
 A skill definition consists of several parts. Amazon's will guide you through the required steps. Once all the checkboxes are lit, you're done. 
 
-Some steps are optional, for example the Certification questions. Although AlexaForce fully supports certification of a skill, this is not required for skills in development or for demo purposes. 
+Some steps are optional, for example the Certification questions. Although AlexaForce supports certification of a skill, this is not required for skills in development or for demo purposes. 
 
 Other steps are crucial, for example the wake word (what word does the user say to activate your skill?), and the interaction model (what kind of input does your skill require and what user intents (e.g. look up a record, or create a Case in Salesforce) is your skill looking for)?
 
@@ -75,7 +75,7 @@ http://your-domain-developer-edition.eu8.force.com/services/apexrest/alexaforce/
 When saving this endpoint, you will need to select the type of certificate that should be used. Select "My development endpoint is a sub-domain of a domain that has a wildcard certificate from a certificate authority" and save.
 
 ## Optional: Account linking
-It is possible to link Salesforce users (e.g. customer community) to the Alexa skill. This allows for even more control over the output of your skill. Alexa is fully compatible with the Salesforce oauth routines and AlexaForce fully supports authicating users. 
+It is possible to link Salesforce users (e.g. customer community) to the Alexa skill. This allows for even more control over the output of your skill. Alexa is compatible with the Salesforce oauth routines and AlexaForce supports authicating users. 
 
 If you set up account linking, make sure to handle the authentication status accordingly in your skill. AlexaForce will provide you with the information about the user and whether authentication succeeded in the first place. 
 
