@@ -49,11 +49,11 @@ Make sure to activate the site.
 # Step 3: Create an Alexa Skill on Amazon
 Here's where all the Alexa magic happens. Log in to your Amazon developer account and find the Alexa Skills option. From your dashboard, go to Alexa -> Alexa Skills Kit. Here, click "Add a new skill". Take down the application id, which you can find in the header, or in the Skill information form. You will need it later.
 
-A skill definition consists of several parts. Amazon's will guide you through the required steps. Once all the checkboxes are lit, you're done. 
+A skill definition consists of several parts. Amazon will guide you through the required steps. Once all the checkboxes are lit, you're done. 
 
-Some steps are optional, for example the Certification questions. Although AlexaForce supports certification of a skill, this is not required for skills in development or for demo purposes. 
+Some steps are optional, for example the certification questions. Although AlexaForce supports certification, this is not required for skills in development or for demo purposes. 
 
-Other steps are crucial, for example the wake word (what word does the user say to activate your skill?), and the interaction model (what kind of input does your skill require and what user intents (e.g. look up a record, or create a Case in Salesforce) is your skill looking for)?
+Some of the other steps are crucial, for example the wake word (what word does the user say to activate your skill?), and the interaction model (what kind of input does your skill require and what user intents (e.g. look up a record, or create a Case in Salesforce) is your skill looking for)?
 
 In the git repo you will find the JSON definition of the model (AlexaModel.json) that can be used with the provided APEX Sample Skill (classes/SampleSkill.cls). The model you create ultimately defines the APEX code you need to write to interact with it. The more complex the model, the more elaborate your APEX handler should be. A lot of the handling can be outsourced to Amazon though, if you use a Dialog model.
 
@@ -97,7 +97,7 @@ Perform Security Checks is only required when you want to submit your skill for 
 
 The good news is: You can host your own verification endpoint! To do so, you will need to implement the checks that are defined here: https://developer.amazon.com/docs/custom-skills/host-a-custom-skill-as-a-web-service.html. Take note that your endpoint does not need to perform the URL testing defined (port, path, host), AlexaForce does this part! 
 
-If you have your own verification endpoint, configure the endpoint appropriately in the custom meta data entry. An example of the required verification REST service is included in this git repo (alexa-verifier), in Node.js. You must add this endpoint in Salesforce as a Remote Site in the Setup menu, at Administer -> Security Controls -> Remote Site Settings.
+If you have your own verification endpoint, configure the endpoint appropriately in the custom meta data entry. You must also add this endpoint in Salesforce as a Remote Site in the Setup menu, at Administer -> Security Controls -> Remote Site Settings. An example of the required verification REST service is included in this git repo (alexa-verifier), in Node.js.
 
 # Test!
 Your skill should now work. Enable the skill in your companion app. This companion app is also available in your browser, under Alexa -> Alexa Voice Service in the Amazon Developer portal. 
