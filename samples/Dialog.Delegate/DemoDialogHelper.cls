@@ -4,7 +4,6 @@ global class DemoDialogHelper {
         // Returns false while the Dialog is not yet marked completed by Alexa,
         // Sets Dialog.Delegate while Alexa is questioning the user
         Boolean resp;
-        Map<String, alexaforce.Model.AlexaSlot> matchedSlots = req.intent.slotMap;
         if(req.dialogState == 'STARTED') {
             alexaforce.Model.AlexaDirective dir = new alexaforce.Model.AlexaDirective();
             dir.type = 'Dialog.Delegate';
