@@ -1,0 +1,268 @@
+{
+  "languageModel": {
+    "types": [
+      {
+        "name": "Description",
+        "values": [
+          {
+            "id": null,
+            "name": {
+              "value": "Some long text to describe the issue",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Another example of what a description could look like",
+              "synonyms": []
+            }
+          }
+        ]
+      },
+      {
+        "name": "Topics",
+        "values": [
+          {
+            "id": null,
+            "name": {
+              "value": "toilet",
+              "synonyms": [
+                "loo",
+                "rest room"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "bathroom",
+              "synonyms": [
+                "shower",
+                "bath"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "sink",
+              "synonyms": [
+                "kitchen",
+                "kintchen sink"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "window",
+              "synonyms": [
+                "glass"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "roof",
+              "synonyms": [
+                "leaking roof"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "door",
+              "synonyms": [
+                "port"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "cable",
+              "synonyms": [
+                "tv",
+                "television",
+                "radio"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "internet",
+              "synonyms": [
+                "internet connection"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "heating",
+              "synonyms": [
+                "central heating",
+                "radiator"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "health",
+              "synonyms": [
+                "urgent",
+                "sick",
+                "ill",
+                "doctor",
+                "ambulance",
+                "hospital"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "intents": [
+      {
+        "name": "AMAZON.CancelIntent",
+        "samples": []
+      },
+      {
+        "name": "AMAZON.HelpIntent",
+        "samples": []
+      },
+      {
+        "name": "AMAZON.StopIntent",
+        "samples": []
+      },
+      {
+        "name": "ServiceIntent",
+        "samples": [
+          "i need help with {ServiceTopic}",
+          "{ServiceTopic} is broken",
+          "fix {ServiceTopic} please",
+          "{ServiceTopic} does not work",
+          "the {ServiceTopic} is broken",
+          "my {ServiceTopic} is broken"
+        ],
+        "slots": [
+          {
+            "name": "ServiceTopic",
+            "type": "Topics",
+            "samples": [
+              "the {ServiceTopic} is broken",
+              "the {ServiceTopic} does not work",
+              "the {ServiceTopic} is disconnected",
+              "i have trouble with {ServiceTopic}",
+              "{ServiceTopic}",
+              "please fix {ServiceTopic} ",
+              "fix {ServiceTopic} please",
+              "there's a problem with {ServiceTopic}",
+              "i have a problem with {ServiceTopic}"
+            ]
+          },
+          {
+            "name": "IssueDescription",
+            "type": "Description",
+            "samples": [
+              "{IssueDescription} that was the description",
+              "{IssueDescription} that is the description",
+              "{IssueDescription} that's the description",
+              "{IssueDescription} is what's wrong"
+            ]
+          }
+        ]
+      }
+    ],
+    "invocationName": "your wake word"
+  },
+  "prompts": [
+    {
+      "id": "Confirm.Intent-ServiceIntent",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Do you want me to notify our service department of this issue with {ServiceTopic}"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-ServiceIntent.IntentSlot-ServiceTopic",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "what can i help you with?"
+        }
+      ]
+    },
+    {
+      "id": "Confirm.Intent-ServiceIntent.IntentSlot-ServiceTopic",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "I understand there's a problem with {ServiceTopic}, is that correct?"
+        },
+        {
+          "type": "PlainText",
+          "value": "So, you need  help with {ServiceTopic}, is that correct?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-ServiceIntent.IntentSlot-IssueDescription",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Please describe the issue"
+        }
+      ]
+    },
+    {
+      "id": "Confirm.Intent-ServiceIntent.IntentSlot-IssueDescription",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Is this the correct description of your issue. {IssueDescription}"
+        }
+      ]
+    }
+  ],
+  "dialog": {
+    "intents": [
+      {
+        "name": "ServiceIntent",
+        "confirmationRequired": true,
+        "prompts": {
+          "confirmation": "Confirm.Intent-ServiceIntent"
+        },
+        "slots": [
+          {
+            "name": "ServiceTopic",
+            "type": "Topics",
+            "elicitationRequired": true,
+            "confirmationRequired": true,
+            "prompts": {
+              "elicitation": "Elicit.Intent-ServiceIntent.IntentSlot-ServiceTopic",
+              "confirmation": "Confirm.Intent-ServiceIntent.IntentSlot-ServiceTopic"
+            }
+          },
+          {
+            "name": "IssueDescription",
+            "type": "Description",
+            "elicitationRequired": true,
+            "confirmationRequired": true,
+            "prompts": {
+              "elicitation": "Elicit.Intent-ServiceIntent.IntentSlot-IssueDescription",
+              "confirmation": "Confirm.Intent-ServiceIntent.IntentSlot-IssueDescription"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
