@@ -82,7 +82,11 @@ If you set up account linking, make sure to handle the authentication status acc
 Make sure to define the userinfo endpoint in your Salesforce custom metadata in step 5. It resides on your main (not the site or community) salesforce domain (must end with salesforce.com!!), suffixed with /services/oauth2/userinfo. 
 
 # Step 4: Create the APEX class in Salesforce
-To implement the handling of the Alexa requests on your Salesforce org, you will need to write an APEX class which extends alexaforce.AlexaForce. You can find an example in the classes folder of this git repo. It includes comments to get you up and running. If you used the model from this git repo (AlexaModel.json), the SampleSkill.cls should work instantly.
+To implement the handling of the Alexa requests on your Salesforce org, you will need to write an APEX class which extends alexaforce.AlexaForce. 
+
+You can find an example in the classes folder of this git repo. It includes comments to get you up and running. If you used the model from this git repo (AlexaModel.json), the SampleSkill.cls should work instantly.
+
+Additional examples can be found in the samples/ directory of the repository.
 
 Go to the Setup menu. Find Build -> Develop -> Apex Classes and create a new Apex Class extending the alexaforce.AlexaForce class.
 
@@ -102,7 +106,7 @@ If you have your own verification endpoint, configure the endpoint appropriately
 # Test!
 Your skill should now work. Enable the skill in your companion app. This companion app is also available in your browser, under Alexa -> Alexa Voice Service in the Amazon Developer portal. 
 
-Test your skill using your Echo device, if you have one, or in the browser in the Test section of the skill definition in the Alexa Developer Portal.
+Test your skill using your Echo device, if you have one, or in the browser in the Test section of the skill definition in the Alexa Developer Portal. Another possibility is to test using https://echosim.io
 
 Modify the APEX code and Alexa should immediately produce the changed response. 
 
