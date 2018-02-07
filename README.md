@@ -79,7 +79,9 @@ It is possible to link Salesforce users (e.g. customer community) to the Alexa s
 
 If you set up account linking, make sure to handle the authentication status accordingly in your skill. AlexaForce will provide you with the information about the user and whether authentication succeeded in the first place. 
 
-Make sure to define the userinfo endpoint in your Salesforce custom metadata in step 5. It resides on your main (not the site or community) salesforce domain (must end with salesforce.com!!), suffixed with /services/oauth2/userinfo. 
+Make sure to define the userinfo endpoint in your Salesforce custom metadata in step 5. It resides on your main (not the site or community) salesforce domain (must end with salesforce.com!!), suffixed with /services/oauth2/userinfo.
+
+Add this endpoint as a remote site at Administer -> Security Controls -> Remote Site Settings!
 
 # Step 4: Create the APEX class in Salesforce
 To implement the handling of the Alexa requests on your Salesforce org, you will need to write an APEX class which extends alexaforce.AlexaForce. 
