@@ -28,6 +28,15 @@ global class DemoDialog extends alexaforce.AlexaForce {
 
             if(DemoDialogHelper.handleServiceIntentDialog(req, Directives)) {
                 createLog('##In Handler## ServiceIntent completed ', String.valueOf(req));
+                
+                //
+                // Handle the confirmation status here
+                // The user might have rejected Alexa's confirmation
+                //
+                // Use:
+                // req.intent.confirmationStatus == 'DENIED'
+                // req.intent.confirmationStatus == 'CONFIRMED'
+                // 
 
                 DemoDialogHelper.logCase(req.intent);
                 //
