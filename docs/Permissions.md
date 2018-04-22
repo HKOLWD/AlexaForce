@@ -64,12 +64,12 @@ permissionTypes (Set<String>)    | Request multiple permissions
 
 Output                           | Description
 -------------------------------- | --------------------------------------------------------------------------------------------
-Model.AlexaResponseBody          | Responsebody contains permission card and spoken text. 
+Model.AlexaResponseBody          | ResponseBody contains permission card and spoken text. 
                                  | Can be modified by implementation, card should remain in tact.
 
 **Example:**
 ```
-Set<String> permTypes = new Set<String> {'read::alexa:device:all:address','read::alexa:device:all:address:country_and_postal_code','ead::alexa:household:list','write::alexa:household:list'};
+Set<String> permTypes = new Set<String> {'read::alexa:device:all:address','read::alexa:device:all:address:country_and_postal_code','read::alexa:household:list','write::alexa:household:list'};
 Model.AlexaResponseBody resp = PermissionManager.askPermission('I need permission!', permTypes[0]);
 Model.AlexaResponseBody resp = PermissionManager.askPermission('I need permissions!', permTypes);
 ```
