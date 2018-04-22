@@ -1,6 +1,6 @@
 # alexaforce.Model.AlexaAddress #
 
-Returned from getPostalCode() or getFullAddress(). Only works when the user has given permission. See [PermissionManager Reference](../Permissions.md).
+Returned from getPostalCode() or getFullAddress(). Only works when the user has given permission. See [PermissionManager Reference](../Permissions.md). Returns ```null``` in case of insufficient permissions, or other errors.
 
 - - - -
 
