@@ -1,14 +1,16 @@
 # AlexaForce API Reference #
 
+
+
 ## Inherited Properties ##
 ### SessionDataManager SessionData ###
 
 #### void setSessionAttribute(String key, Object value) ####
-**String key**
-Used as index to get and set the value
 
-**Object value**
-The data to hold for this key
+Input            | Description
+-----------------| ---------------------------------------
+key (String)     | Used as index to get and set the value
+value (Object)   | The data to hold for this key
 
 **Example:**
 ```
