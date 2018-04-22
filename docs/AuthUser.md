@@ -9,13 +9,13 @@ The value will be ```null``` when no account linking has been set up, or authent
 **Example:**
 ```
 //
-// See example JSON below
+// See example openid JSON below formmore properties
 System.assertEquals('sample-user-id',AuthUser.user_id);
 System.assertEquals(1,[SELECT count() FROM User WHERE Id = :AuthUser.user_id]]);
 System.assertEquals('john.doe@example.com',AuthUser.email);
 ```
 
-**Example JSON Request:**
+**Example openid JSON response:**
 ```
 {
   "zoneinfo": "Europe\/Amsterdam",
