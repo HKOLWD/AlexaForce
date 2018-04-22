@@ -6,11 +6,11 @@
 
 [DirectiveManager Reference](DirectiveManager.md)
 
-[SystemInfo Reference]('model/'+AlexaSystem.md)
+[SystemInfo Reference](Model/AlexaSystem.md)
 
-[AlexaUserInfo Reference]('model/'+AlexaUser.md)
+[AlexaUserInfo Reference](Model/AlexaUser.md)
 
-[SessionInfo Reference]('model/'+AlexaSession.md)
+[SessionInfo Reference](Model/AlexaSession.md)
 
 [AuthUser Reference](AuthUser.md)
 
