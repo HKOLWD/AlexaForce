@@ -6,6 +6,7 @@
 #### void setSessionAttribute(String key, Object value) ####
 **String key**
 Used as index to get and set the value
+
 **Object value**
 The data to hold for this key
 
@@ -13,9 +14,34 @@ The data to hold for this key
 ```
 SessionData.setSessionAttribute('counter', (Integer) 1);
 ```
-#### void setSessionAttribute(String key, Object value) ####
+
+#### void removeSessionAttribute(String key) ####
+**String key**
+The index to be removed from the Session
+
 ```
-SessionData.setSessionAttribute('counter', (Integer) 1);
+SessionData.removeSessionAttribute('counter');
+```
+
+#### Object getSessionAttribute(String key) ####
+**String key**
+The index to fetch
+
+** returns Object **
+Object holds the data fetched for the provided key. Must be casted to the appropriate type
+
+```
+Integer counter = (Integer) SessionData.getSessionAttribute('counter');
+```
+
+#### Map<String, Object> getSessionAttributes() ####
+
+** returns Map<String, Object> **
+Map holds all current session data, indexed by the session keys
+
+```
+Map<String, Object> sessionDataMap = SessionData.getSessionAttributes();
+System.assert(1, (Integer) sessionDataMap.get('counter'));
 ```
 
 ### DirectiveManager Directives ###
