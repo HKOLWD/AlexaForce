@@ -28,17 +28,17 @@ See [alexaforce.TokenGenerator Reference](TokenGenerator.md)
 Contains the userId. This value will be uniquely assigned each time the skill is enabled and reset when the skill is disabled. 
 
 ### String requestId ###
-The request id from Alexa. Used as a key for alexaforce.Request_Log__c records.
+The request id from Alexa. Used as a key for alexaforce__Request_Log__c records.
 
 ### String applicationId ###
-The application id which should correspond with a matching Alexa_Skill__mdt.
+The application id which should correspond with a matching alexaforce__Alexa_Skill__mdt.
 
 ## Inherited Methods ##
-### Model.AlexaAddress getFullAddress() ###
-[Model.AlexaAddress Reference](Model/AlexaAddress.md)
+### alexaforce.Model.AlexaAddress getFullAddress() ###
+[alexaforce.Model.AlexaAddress Reference](Model/AlexaAddress.md)
 
-### Model.AlexaAddress getPostalCode() ###
-[Model.AlexaAddress Reference](Model/AlexaAddress.md)
+### alexaforce.Model.AlexaAddress getPostalCode() ###
+[alexaforce.Model.AlexaAddress Reference](Model/AlexaAddress.md)
 
 ### void createLog(String title, String msg) ###
-Queues an alexaforce.Log_Entry__c to be inserted after returning the response. Entries will be grouped under the alexaforce.Request_Log__c for the corresponding request id.
+Queues an alexaforce__Log_Entry__c to be inserted after returning the response. Entries will be grouped under the alexaforce__Request_Log__c for the corresponding request id.
