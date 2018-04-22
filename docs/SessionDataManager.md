@@ -1,7 +1,8 @@
-### SessionDataManager SessionData ###
+# SessionDataManager SessionData #
 
 Used to set and retrieve custom session data. This is useful for retaining information between requests.
 
+### setSessionAttribute ###
 - - - -
 
 ``` void setSessionAttribute(String key, Object value) ```
@@ -15,6 +16,8 @@ value (Object)   | The data to hold for this key
 ```
 SessionData.setSessionAttribute('counter', (Integer) 1);
 ```
+
+### removeSessionAttribute ###
 - - - -
 
 ``` void removeSessionAttribute(String key) ```
@@ -27,6 +30,8 @@ key (String)     | The index to be removed from the Session
 ```
 SessionData.removeSessionAttribute('counter');
 ```
+
+### getSessionAttribute ###
 - - - -
 
 ``` Object getSessionAttribute(String key) ```
@@ -44,6 +49,8 @@ Object	         | Object holds the data fetched for the provided key. Must be ca
 ```
 Integer counter = (Integer) SessionData.getSessionAttribute('counter');
 ```
+
+### getSessionAttributes ###
 - - - -
 
 ``` Map<String, Object> getSessionAttributes() ```
@@ -55,5 +62,5 @@ Map<String, Object>	 | Map holds all current session data, indexed by the sessio
 **Example:**
 ```
 Map<String, Object> sessionDataMap = SessionData.getSessionAttributes();
-System.assert(1, (Integer) sessionDataMap.get('counter'));
+System.assertEquals(1, (Integer) sessionDataMap.get('counter'));
 ```
