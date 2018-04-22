@@ -7,6 +7,7 @@ Checking for list permissions, as well as working with lists should be implement
 
 ### gotDevicePermission ###
 - - - -
+Returns true if the requested permision has been granted by the user.
 
 ``` Boolean gotDevicePermission(String permissionType) ```
 
@@ -48,6 +49,7 @@ permissionType (String)  | The device permission to check for. Currently only su
 
 ### askPermission ###
 - - - -
+Returns a Model.AlexaResponseBody containing a card requesting the indicated permissions and the spoken text. The outputSpeech property can be modified by implementation (e.g. for SSML), the card should remain in tact.
 
 ``` 
 Model.AlexaResponseBody askPermission(String spokenText, String permissionType) 
@@ -62,7 +64,7 @@ permissionTypes (Set<String>)    | Request multiple permissions
 
 Output                           | Description
 -------------------------------- | --------------------------------------------------------------------------------------------
-Model.AlexaResponseBody          | ResponseBody contains permission card and spoken text. outputSpeech property can be modified by implementation (e.g. for SSML), card should remain in tact.
+Model.AlexaResponseBody          | ResponseBody contains permission card and spoken text. 
 
 **Example:**
 ```
