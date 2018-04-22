@@ -18,29 +18,39 @@ SessionData.setSessionAttribute('counter', (Integer) 1);
 ```
 
 #### void removeSessionAttribute(String key) ####
-**String key**
-The index to be removed from the Session
 
+Input            | Description
+-----------------| ---------------------------------------
+key (String)     | The index to be removed from the Session
+
+**Example:**
 ```
 SessionData.removeSessionAttribute('counter');
 ```
 
 #### Object getSessionAttribute(String key) ####
-**String key**
-The index to fetch
 
-** returns Object **
-Object holds the data fetched for the provided key. Must be casted to the appropriate type
+Input            | Description
+-----------------| ---------------------------------------
+key (String)     | The index to fetch
 
+
+Output           | Description
+-----------------| ---------------------------------------
+Object	         | Object holds the data fetched for the provided key. Must be casted to the appropriate type
+
+**Example:**
 ```
 Integer counter = (Integer) SessionData.getSessionAttribute('counter');
 ```
 
 #### Map<String, Object> getSessionAttributes() ####
 
-** returns Map<String, Object> **
-Map holds all current session data, indexed by the session keys
+Output               | Description
+---------------------| ---------------------------------------
+Map<String, Object>	 | Map holds all current session data, indexed by the session keys
 
+**Example:**
 ```
 Map<String, Object> sessionDataMap = SessionData.getSessionAttributes();
 System.assert(1, (Integer) sessionDataMap.get('counter'));
