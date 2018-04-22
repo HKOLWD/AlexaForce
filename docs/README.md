@@ -55,7 +55,7 @@ System.assertEquals(AlexaSkillConfig.alexaforce__Application_Id__c, applicationI
 ### getPostalCode() ###
 [alexaforce.Model.AlexaAddress Reference](Model/AlexaAddress.md)
 
-### createLog ###
+### void createLog(String, String) ###
 Queues an alexaforce__Log_Entry__c to be inserted after returning the response. Entries will be grouped under the alexaforce__Request_Log__c for the corresponding request id.
 
 ``` void createLog(String title, String msg) ```
