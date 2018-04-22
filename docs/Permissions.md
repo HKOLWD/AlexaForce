@@ -49,11 +49,11 @@ permissionType (String)  | The device permission to check for. Currently only su
 
 ### askPermission ###
 - - - -
-Returns a Model.AlexaResponseBody containing a card requesting the indicated permissions and the spoken text. The outputSpeech property can be modified by implementation (e.g. for SSML), the card should remain in tact.
+Returns a alexaforce.Model.AlexaResponseBody containing a card requesting the indicated permissions and the spoken text. The outputSpeech property can be modified by implementation (e.g. for SSML), the card should remain in tact.
 
 ``` 
-Model.AlexaResponseBody askPermission(String spokenText, String permissionType) 
-Model.AlexaResponseBody askPermission(String spokenText, List<String> permissionTypes)
+alexaforce.Model.AlexaResponseBody askPermission(String spokenText, String permissionType) 
+alexaforce.Model.AlexaResponseBody askPermission(String spokenText, List<String> permissionTypes)
 ```
 
 Input                            | Description
@@ -69,6 +69,6 @@ Model.AlexaResponseBody          | ResponseBody contains permission card and spo
 **Example:**
 ```
 Set<String> permTypes = new Set<String> {'read::alexa:device:all:address','read::alexa:device:all:address:country_and_postal_code','read::alexa:household:list','write::alexa:household:list'};
-Model.AlexaResponseBody resp = PermissionManager.askPermission('I need permission!', permTypes[0]);
-Model.AlexaResponseBody resp = PermissionManager.askPermission('I need permissions!', permTypes);
+alexaforce.Model.AlexaResponseBody resp = PermissionManager.askPermission('I need permission!', permTypes[0]);
+alexaforce.Model.AlexaResponseBody resp = PermissionManager.askPermission('I need permissions!', permTypes);
 ```

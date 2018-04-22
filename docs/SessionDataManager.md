@@ -4,7 +4,7 @@ Used to set and retrieve custom session data. This is useful for retaining infor
 
 ### setSessionAttribute ###
 - - - -
-Sets the value for a certain session attribute
+Sets the value for a certain session attribute.
 
 ``` void setSessionAttribute(String key, Object value) ```
 
@@ -20,7 +20,7 @@ SessionData.setSessionAttribute('counter', (Integer) 1);
 
 ### removeSessionAttribute ###
 - - - -
-Deletes the session attribute from the next response
+Deletes the session attribute from the next response.
 
 ``` void removeSessionAttribute(String key) ```
 
@@ -35,7 +35,7 @@ SessionData.removeSessionAttribute('counter');
 
 ### getSessionAttribute ###
 - - - -
-Returns the session value for the specified key
+Returns the session value for the specified key.
 
 ``` Object getSessionAttribute(String key) ```
 
