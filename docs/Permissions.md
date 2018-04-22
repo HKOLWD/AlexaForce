@@ -13,8 +13,8 @@ Checking for list permissions, as well as working with lists should be implement
 Input                    | Description
 -------------------------| ---------------------------------------
 permissionType (String)  | The device permission to check for. Currently only supports:
-                         | read::alexa:device:all:address:country_and_postal_code
-                         | read::alexa:device:all:address
+                           read::alexa:device:all:address:country_and_postal_code
+                           read::alexa:device:all:address
 
 **Example:**
 ```
@@ -64,8 +64,7 @@ permissionTypes (Set<String>)    | Request multiple permissions
 
 Output                           | Description
 -------------------------------- | --------------------------------------------------------------------------------------------
-Model.AlexaResponseBody          | ResponseBody contains permission card and spoken text. 
-                                 | Can be modified by implementation, card should remain in tact.
+Model.AlexaResponseBody          | ResponseBody contains permission card and spoken text. Can be modified by implementation, card should remain in tact.
 
 **Example:**
 ```
