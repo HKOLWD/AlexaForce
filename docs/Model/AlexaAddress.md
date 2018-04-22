@@ -8,15 +8,15 @@ Returned from getPostalCode() or getFullAddress(). Only works when the user has 
 ```
 //
 // Properties set when retrieved with getPostalCode()
-global String countryCode;
-global String postalCode;
+alexaforce.Model.AlexaAddress.countryCode;
+alexaforce.Model.AlexaAddress.postalCode;
 //
 // Additional properties when retrieved with getFullAddress()
-global String addressLine1;
-global String addressLine2;
-global String addressLine3;
-global String city;
-global String stateOrRegion;
-global String districtOrCounty;
+alexaforce.Model.AlexaAddress.addressLine1;
+alexaforce.Model.AlexaAddress.addressLine2;
+alexaforce.Model.AlexaAddress.addressLine3;
+alexaforce.Model.AlexaAddress.city;
+alexaforce.Model.AlexaAddress.stateOrRegion;
+alexaforce.Model.AlexaAddress.districtOrCounty;
 
 ```
