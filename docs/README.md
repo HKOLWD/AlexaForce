@@ -49,11 +49,23 @@ System.assertEquals(AlexaSkillConfig.alexaforce__Application_Id__c, applicationI
 ```
 
 ## Inherited Methods ##
-### alexaforce.Model.AlexaAddress getFullAddress() ###
+### getFullAddress() ###
 [alexaforce.Model.AlexaAddress Reference](Model/AlexaAddress.md)
 
-### alexaforce.Model.AlexaAddress getPostalCode() ###
+### getPostalCode() ###
 [alexaforce.Model.AlexaAddress Reference](Model/AlexaAddress.md)
 
-### void createLog(String title, String msg) ###
+### createLog ###
 Queues an alexaforce__Log_Entry__c to be inserted after returning the response. Entries will be grouped under the alexaforce__Request_Log__c for the corresponding request id.
+
+``` void createLog(String title, String msg) ```
+
+Input                    | Description
+-------------------------| -----------------------------------------
+title (String)           | Used as name for the log entry
+msg (String)             | Used as the Message__c for the log entry
+
+**Example:**
+```
+createLog('##In My Custom Skill##', 'My message');
+```
