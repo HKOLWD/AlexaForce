@@ -27,11 +27,26 @@ See [alexaforce.TokenGenerator Reference](TokenGenerator.md)
 ### String userId ###
 Contains the userId. This value will be uniquely assigned each time the skill is enabled and reset when the skill is disabled. 
 
+**Example:**
+```
+System.assertEquals('some-user-id',userId);
+```
+
 ### String requestId ###
 The request id from Alexa. Used as a key for alexaforce__Request_Log__c records.
 
+**Example:**
+```
+System.assertEquals('some-request-id',requestId);
+```
+
 ### String applicationId ###
 The application id which should correspond with a matching alexaforce__Alexa_Skill__mdt.
+
+**Example:**
+```
+System.assertEquals(AlexaSkillConfig.alexaforce__Application_Id__c, applicationId);
+```
 
 ## Inherited Methods ##
 ### alexaforce.Model.AlexaAddress getFullAddress() ###
