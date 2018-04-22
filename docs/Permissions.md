@@ -13,7 +13,9 @@ Returns true if the requested permision has been granted by the user.
 
 Input                    | Description
 -------------------------| ---------------------------------------
-permissionType (String)  | The device permission to check for. Currently only supports: read::alexa:device:all:address:country_and_postal_code and read::alexa:device:all:address
+permissionType (String)  | The device permission to check for. Currently only supports:
+* read::alexa:device:all:address:country_and_postal_code 
+* read::alexa:device:all:address
 
 **Example:**
 ```
