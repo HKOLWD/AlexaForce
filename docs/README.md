@@ -30,4 +30,6 @@
 
 ### Model.AlexaAddress getPostalCode() ###
 
+### void createLog(String title, String msg) ###
+
 
