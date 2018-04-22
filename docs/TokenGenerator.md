@@ -10,4 +10,4 @@ public class DevToken extends alexaforce.TokenGenerator {
 }
 ```
 
-![picture alt](http://www.gaonline.nl/alexaforce/tokensample.png "Example custom meta data")
+![picture alt](http://www.gaonline.nl/alexaforce/TokenProvider-Sample.png "Example custom meta data")
