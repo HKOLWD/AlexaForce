@@ -50,10 +50,14 @@ System.assertEquals(AlexaSkillConfig.alexaforce__Application_Id__c, applicationI
 
 ## Inherited Methods ##
 ### getFullAddress() ###
-[alexaforce.Model.AlexaAddress Reference](Model/AlexaAddress.md)
+Returns ```null``` in case of insufficient permissions, or other errors. See [PermissionManager Reference](../Permissions.md).
+
+Returns an [alexaforce.Model.AlexaAddress](Model/AlexaAddress.md) when successfull.
 
 ### getPostalCode() ###
-[alexaforce.Model.AlexaAddress Reference](Model/AlexaAddress.md)
+Returns ```null``` in case of insufficient permissions, or other errors. See [PermissionManager Reference](../Permissions.md).
+
+Returns an [alexaforce.Model.AlexaAddress](Model/AlexaAddress.md) when successfull.
 
 ### void createLog(String, String) ###
 Queues an alexaforce__Log_Entry__c to be inserted after returning the response. Entries will be grouped under the alexaforce__Request_Log__c for the corresponding request id.
