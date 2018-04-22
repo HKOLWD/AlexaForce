@@ -1,8 +1,9 @@
 # AlexaForce API Reference #
 
-
-
 ## Inherited Properties ##
+
+### SessionDataManager SessionData ###
+<SessionDataManager.md>
 
 ### DirectiveManager Directives ###
 
