@@ -1,6 +1,6 @@
 ### SessionDataManager SessionData ###
 
-#### void setSessionAttribute(String key, Object value) ####
+``` void setSessionAttribute(String key, Object value) ```
 
 Input            | Description
 -----------------| ---------------------------------------
@@ -11,8 +11,9 @@ value (Object)   | The data to hold for this key
 ```
 SessionData.setSessionAttribute('counter', (Integer) 1);
 ```
+- - - -
 
-#### void removeSessionAttribute(String key) ####
+``` void removeSessionAttribute(String key) ```
 
 Input            | Description
 -----------------| ---------------------------------------
@@ -22,8 +23,9 @@ key (String)     | The index to be removed from the Session
 ```
 SessionData.removeSessionAttribute('counter');
 ```
+- - - -
 
-#### Object getSessionAttribute(String key) ####
+``` Object getSessionAttribute(String key) ```
 
 Input            | Description
 -----------------| ---------------------------------------
@@ -38,8 +40,9 @@ Object	         | Object holds the data fetched for the provided key. Must be ca
 ```
 Integer counter = (Integer) SessionData.getSessionAttribute('counter');
 ```
+- - - -
 
-#### Map<String, Object> getSessionAttributes() ####
+``` Map<String, Object> getSessionAttributes() ```
 
 Output               | Description
 ---------------------| ---------------------------------------
