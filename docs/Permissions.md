@@ -62,7 +62,7 @@ permissionTypes (Set<String>)    | Request multiple permissions
 
 Output                           | Description
 -------------------------------- | --------------------------------------------------------------------------------------------
-Model.AlexaResponseBody          | ResponseBody contains permission card and spoken text. Can be modified by implementation, card should remain in tact.
+Model.AlexaResponseBody          | ResponseBody contains permission card and spoken text. outputSpeech property can be modified by implementation (e.g. for SSML), card should remain in tact.
 
 **Example:**
 ```
