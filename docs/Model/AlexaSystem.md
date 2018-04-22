@@ -17,27 +17,26 @@ System.assertEquals('sample-bearer-token',SystemInfo.apiAccessToken);
 **Example JSON Request:**
 ```
 "System": {
-		"application": {
-			"applicationId": "sample-application-id"
-		},
-		"user": {
-			"userId": "sample-user-id",
-			"permissions": {
-				"consentToken": "deprecated-consent-token"
+	"application": {
+		"applicationId": "sample-application-id"
+	},
+	"user": {
+		"userId": "sample-user-id",
+		"permissions": {
+			"consentToken": "deprecated-consent-token"
+		}
+	},
+	"device": {
+		"deviceId": "sample-device-id",
+		"supportedInterfaces": {
+			"AudioPlayer": {},
+			"Display": {
+				"templateVersion": "1.0",
+				"markupVersion": "1.0"
 			}
-		},
-		"device": {
-			"deviceId": "sample-device-id",
-			"supportedInterfaces": {
-				"AudioPlayer": {},
-				"Display": {
-					"templateVersion": "1.0",
-					"markupVersion": "1.0"
-				}
-			}
-		},
-		"apiEndpoint": "https://api.amazonalexa.com",
-		"apiAccessToken": "sample-bearer-token"
-	}
+		}
+	},
+	"apiEndpoint": "https://api.amazonalexa.com",
+	"apiAccessToken": "sample-bearer-token"
 }
 ```
