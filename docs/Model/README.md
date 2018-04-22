@@ -1,9 +1,9 @@
 # AlexaForce Model Reference #
 
-[alexaforce.Model.AlexaSystem Reference](AlexaSystem.md)
+[alexaforce.Model.AlexaSystem](AlexaSystem.md)
 
-[alexaforce.Model.AlexaUser Reference](AlexaUser.md)
+[alexaforce.Model.AlexaUser](AlexaUser.md)
 
-[alexaforce.Model.AlexaSession Reference](AlexaSession.md)
+[alexaforce.Model.AlexaSession](AlexaSession.md)
 
-[alexaforce.Model.AlexaAddress Reference](Model/AlexaAddress.md)
+[alexaforce.Model.AlexaAddress](Model/AlexaAddress.md)
