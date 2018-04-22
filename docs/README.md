@@ -3,7 +3,7 @@
 ## Inherited Properties ##
 
 ### SessionDataManager SessionData ###
-<SessionDataManager.md>
+[a relative link](SessionDataManager.md)
 
 ### DirectiveManager Directives ###
 
