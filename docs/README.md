@@ -1,4 +1,4 @@
-# Token Provider documentation #
+# Token Provider #
 Token Providers may be used in an alexaforce.Alexa_Skill__mdt for the request verification endpoint. Token Providers of type APEX should implement the extend alexaforce.TokenGenerator.
 
 See [alexaforce.TokenGenerator Reference](TokenGenerator.md)
