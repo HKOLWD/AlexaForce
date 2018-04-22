@@ -1,6 +1,6 @@
 # Permissions PermissionManager #
 
-Helper to request permissions (address and list) and check for permissions (device only). 
+Helper to request permissions (device and list) and check for permissions (device only). Device permissions give access to address information of Alexa.
 
 Checking for list permissions, as well as working with lists should be implemented by the skill developer. Documentation can be found here: https://developer.amazon.com/docs/custom-skills/access-the-alexa-shopping-and-to-do-lists.html
 
