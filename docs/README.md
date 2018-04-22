@@ -36,4 +36,4 @@ The application id which should correspond with a matching Alexa_Skill__mdt.
 [Model.AlexaAddress Reference](Model/AlexaAddress.md)
 
 ### void createLog(String title, String msg) ###
-Queues an alexaforce.Log_Entry__c to be inserted after returning the response
+Queues an alexaforce.Log_Entry__c to be inserted after returning the response. Entries will be grouped under the alexaforce.Request_Log__c for the corresponding request id.
