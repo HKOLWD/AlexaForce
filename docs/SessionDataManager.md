@@ -1,5 +1,9 @@
 ### SessionDataManager SessionData ###
 
+Used to set and retrieve custom session data. This is useful for retaining information between requests.
+
+- - - -
+
 ``` void setSessionAttribute(String key, Object value) ```
 
 Input            | Description
