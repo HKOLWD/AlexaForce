@@ -42,55 +42,34 @@ permissionType (String)  | The device permission to check for. Currently only su
         }
         catch (Exception e) {
             createLog('## My Skill ### Exception',e.getMessage()+' '+e.getStackTraceString());
+            return resp;
         }
         return resp;
 }		
 ```
 
-### removeSessionAttribute ###
+### askPermission ###
 - - - -
 
-``` void removeSessionAttribute(String key) ```
+``` 
+Model.AlexaResponseBody askPermission(String spokenText, String permissionType) 
+Model.AlexaResponseBody askPermission(String spokenText, List<String> permissionTypes)
+```
 
-Input            | Description
------------------| ---------------------------------------
-key (String)     | The index to be removed from the Session
+Input                            | Description
+-------------------------------- | ---------------------------------------------------------
+spokenText (String)              | What Alexa will say when sending the permission request
+permissionType (String)          | Request a single permission
+permissionTypes (Set<String>)    | Request multiple permissions
+
+Output                           | Description
+-------------------------------- | --------------------------------------------------------------------------------------------
+Model.AlexaResponseBody          | Responsebody contains permission card and spoken text. 
+                                 | Can be modified by implementation, card should remain in tact.
 
 **Example:**
 ```
-SessionData.removeSessionAttribute('counter');
-```
-
-### getSessionAttribute ###
-- - - -
-
-``` Object getSessionAttribute(String key) ```
-
-Input            | Description
------------------| ---------------------------------------
-key (String)     | The index to fetch
-
-
-Output           | Description
------------------| ---------------------------------------
-Object	         | Object holds the data fetched for the provided key. Must be casted to the appropriate type
-
-**Example:**
-```
-Integer counter = (Integer) SessionData.getSessionAttribute('counter');
-```
-
-### getSessionAttributes ###
-- - - -
-
-``` Map<String, Object> getSessionAttributes() ```
-
-Output               | Description
----------------------| ---------------------------------------
-Map<String, Object>	 | Map holds all current session data, indexed by the session keys
-
-**Example:**
-```
-Map<String, Object> sessionDataMap = SessionData.getSessionAttributes();
-System.assertEquals(1, (Integer) sessionDataMap.get('counter'));
+Set<String> permTypes = new Set<String> {'read::alexa:device:all:address','read::alexa:device:all:address:country_and_postal_code','ead::alexa:household:list','write::alexa:household:list'};
+Model.AlexaResponseBody resp = PermissionManager.askPermission('I need permission!', permTypes[0]);
+Model.AlexaResponseBody resp = PermissionManager.askPermission('I need permissions!', permTypes);
 ```
