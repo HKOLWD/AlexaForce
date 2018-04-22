@@ -9,13 +9,16 @@ Checking for list permissions, as well as working with lists should be implement
 - - - -
 Returns true if the requested permision has been granted by the user.
 
+Supports:
+
+* read::alexa:device:all:address:country_and_postal_code 
+* read::alexa:device:all:address
+
 ``` Boolean gotDevicePermission(String permissionType) ```
 
 Input                    | Description
 -------------------------| ---------------------------------------
-permissionType (String)  | The device permission to check for. Currently only supports:
-* read::alexa:device:all:address:country_and_postal_code 
-* read::alexa:device:all:address
+permissionType (String)  | The device permission to check for
 
 **Example:**
 ```
