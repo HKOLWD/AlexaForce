@@ -1,6 +1,6 @@
 # alexaforce.Model.AlexaSession SessionInfo #
 
-Contains information about the Session node of the Alexa request. 
+Contains an APEX reflection of the Session node of the Alexa request. 
 - - - -
 
 **Example:**

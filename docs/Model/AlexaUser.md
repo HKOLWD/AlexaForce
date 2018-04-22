@@ -1,6 +1,6 @@
 # alexaforce.Model.AlexaUser UserInfo #
 
-Contains information about the User node of the Alexa request. 
+Contains an APEX reflection of the User node of the Alexa request. 
 - - - -
 
 **Example:**

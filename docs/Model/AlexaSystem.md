@@ -1,6 +1,6 @@
 # alexaforce.Model.AlexaSystem SystemInfo #
 
-Contains information about the System node of the Alexa request. 
+Contains an APEX reflection of the System node of the Alexa request. 
 - - - -
 
 **Example:**
