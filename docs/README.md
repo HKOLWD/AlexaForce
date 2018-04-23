@@ -8,7 +8,9 @@ See [alexaforce.TokenGenerator Reference](TokenGenerator.md)
 
 # AlexaForce API Reference #
 
-To implement AlexaForce, the ```handleRequest(Model.AlexaRequest req)``` method must be overriden in a class extending ```alexaforce.AlexaForce```
+To implement AlexaForce, the ```handleRequest(Model.AlexaRequest req)``` method must be overriden in a class extending ```alexaforce.AlexaForce```.
+
+Most of the code samples in the docs will assume a context within such an extension.
 
 **Example:**
 ```
