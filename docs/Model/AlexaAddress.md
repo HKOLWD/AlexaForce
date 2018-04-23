@@ -26,7 +26,10 @@ alexaforce.Model.AlexaAddress getPostalCode()
 
 alexaforce.Model.AlexaAddress pcAddress = getPostalCode();
 System.assertEquals('Device-PC', pcAddress.postalCode);
+System.assertEquals(null, pcAddress.city);
+
 alexaforce.Model.AlexaAddress fullAddress = getFullAddress();
+System.assertEquals('Device-PC', fullAddress.postalCode);
 System.assertEquals('Device-City-Address', fullAddress.city);
 
 ```
