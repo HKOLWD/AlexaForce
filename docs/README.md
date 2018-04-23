@@ -15,6 +15,7 @@ To implement AlexaForce, the ```handleRequest(Model.AlexaRequest req)``` method 
 global class DevSkill extends alexaforce.AlexaForce {
     global override Model.AlexaResponseBody handleRequest(alexaforce.Model.AlexaRequest req) {
         alexaforce.Model.AlexaResponseBody resp;
+        createLog('##Handler## Request Type', rep.type);
         if (req.type == 'LaunchRequest') {
             resp = getLaunchRequestResponse(req);
         } else if (req.type == 'IntentRequest') {
