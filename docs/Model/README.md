@@ -6,4 +6,4 @@
 
 [alexaforce.Model.AlexaSession](AlexaSession.md)
 
-[alexaforce.Model.AlexaAddress](Model/AlexaAddress.md)
+[alexaforce.Model.AlexaAddress](AlexaAddress.md)
