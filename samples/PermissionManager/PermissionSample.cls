@@ -1,6 +1,6 @@
 //
-// This skill will try to read up the device city address, if no permission was yet given,
-// it will ask for permission to read the full address
+// This skill will try to read up the device city address in the LaunchRequest. 
+// If no permission was yet given, it will ask for permission to read the full address.
 global class PermissionSample extends AlexaForce {
     global override alexaforce.Model.AlexaResponseBody handleRequest(alexaforce.Model.AlexaRequest req) {
         alexaforce.Model.AlexaResponseBody resp;
@@ -35,7 +35,7 @@ global class PermissionSample extends AlexaForce {
 
             } else {
                 resp = PermissionManager.askPermission('I need permission!', permType);
-                resp.shouldEndSession = false;
+                resp.shouldEndSession = true;
             }
         }
         catch (Exception e) {
