@@ -4,6 +4,11 @@ Returned from ```alexaforce.AlexaForce.getPostalCode()``` or ```alexaforce.Alexa
 
 - - - -
 
+```
+alexaforce.Model.AlexaAddress getFullAddress()
+alexaforce.Model.AlexaAddress getPostalCode()
+```
+
 **Example:**
 ```
 //
