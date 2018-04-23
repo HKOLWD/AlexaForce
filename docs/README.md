@@ -15,7 +15,7 @@ Most of the code samples in the docs will assume a context within such an extens
 **Example:**
 ```
 global class DevSkill extends alexaforce.AlexaForce {
-    global override Model.AlexaResponseBody handleRequest(alexaforce.Model.AlexaRequest req) {
+    global override alexaforce.Model.AlexaResponseBody handleRequest(alexaforce.Model.AlexaRequest req) {
         alexaforce.Model.AlexaResponseBody resp;
         createLog('##Handler## Request Type', req.type);
         if (req.type == 'LaunchRequest') {
