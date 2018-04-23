@@ -13,15 +13,20 @@ alexaforce.Model.AlexaAddress getPostalCode()
 ```
 //
 // Properties set when retrieved with getPostalCode()
-alexaforce.Model.AlexaAddress.countryCode;
-alexaforce.Model.AlexaAddress.postalCode;
+// alexaforce.Model.AlexaAddress.countryCode;
+// alexaforce.Model.AlexaAddress.postalCode;
 //
 // Additional properties when retrieved with getFullAddress()
-alexaforce.Model.AlexaAddress.addressLine1;
-alexaforce.Model.AlexaAddress.addressLine2;
-alexaforce.Model.AlexaAddress.addressLine3;
-alexaforce.Model.AlexaAddress.city;
-alexaforce.Model.AlexaAddress.stateOrRegion;
-alexaforce.Model.AlexaAddress.districtOrCounty;
+// alexaforce.Model.AlexaAddress.addressLine1;
+// alexaforce.Model.AlexaAddress.addressLine2;
+// alexaforce.Model.AlexaAddress.addressLine3;
+// alexaforce.Model.AlexaAddress.city;
+// alexaforce.Model.AlexaAddress.stateOrRegion;
+// alexaforce.Model.AlexaAddress.districtOrCounty;
+
+alexaforce.Model.AlexaAddress pcAddress = getPostalCode();
+System.assertEquals('Device-PC', pcAddress.postalCode);
+alexaforce.Model.AlexaAddress fullAddress = getFullAddress();
+System.assertEquals('Device-City-Address', fullAddress.city);
 
 ```
