@@ -1,9 +1,34 @@
 # Token Provider #
+
 Token Providers may be used in an alexaforce.Alexa_Skill__mdt for the request verification endpoint. Token Providers of type APEX should implement the extend alexaforce.TokenGenerator.
 
 See [alexaforce.TokenGenerator Reference](TokenGenerator.md)
 
+- - - -
+
 # AlexaForce API Reference #
+
+To implement AlexaForce, the ```handleRequest(Model.AlexaRequest req)``` method must be overriden in a class extending ```alexaforce.AlexaForce```
+
+**Example:**
+```
+global class DevSkill extends alexaforce.AlexaForce {
+    global override Model.AlexaResponseBody handleRequest(alexaforce.Model.AlexaRequest req) {
+        alexaforce.Model.AlexaResponseBody resp;
+        if (req.type == 'LaunchRequest') {
+            resp = getLaunchRequestResponse(req);
+        } else if (req.type == 'IntentRequest') {
+            resp = getIntentRequestResponse(req);
+        } else if (req.type == 'SessionEndedRequest') {
+            resp = getSessionEndedResponse(req);
+        } else {
+            resp = getDefaultResponse(req);
+        }
+        return resp;
+    }
+}
+```
+- - - -
 
 ## Inherited Objects ##
 
@@ -22,6 +47,8 @@ See [alexaforce.TokenGenerator Reference](TokenGenerator.md)
 [AlexaSkillConfig Reference](Alexa_Skill__mdt.md)
 
 [PermissionManager Reference](Permissions.md)
+
+- - - -
 
 ## Inherited Primitives ##
 ### String userId ###
@@ -47,6 +74,8 @@ The application id which should correspond with a matching alexaforce__Alexa_Ski
 ```
 System.assertEquals(AlexaSkillConfig.alexaforce__Application_Id__c, applicationId);
 ```
+
+- - - -
 
 ## Inherited Methods ##
 ### getFullAddress() ###
