@@ -88,6 +88,8 @@ Make sure to define the userinfo endpoint in your Salesforce custom metadata in 
 
 Add this endpoint as a remote site at Administer -> Security Controls -> Remote Site Settings!
 
+A trailhead is available with instructions how to link Alexa to Salesforce: https://trailhead.salesforce.com/en/projects/build-a-private-alexa-for-business-skill-for-salesforce/steps/create-a-connected-app-and-link-to-alexa
+
 # Step 4: Create the APEX class in Salesforce
 To implement the handling of the Alexa requests on your Salesforce org, you will need to write an APEX class which extends alexaforce.AlexaForce. 
 
