@@ -11,7 +11,7 @@ Not anymore. AlexaForce let's you define Alexa Skills, straight on your Salesfor
 
 The AlexaForce SDK is available for beta testing by installing the managed package.
 
-***Update 25 April 2018***
+# Update 25 April 2018
 New beta version of the managed package has been released, *May 2018*. 
 
 The new versions are found here:
@@ -60,11 +60,9 @@ A skill definition consists of several parts. Amazon will guide you through the 
 
 Some steps are optional, for example the certification questions. Although AlexaForce supports certification, this is not required for skills in development or for demo purposes. 
 
-Some of the other steps are crucial, for example the wake word (what word does the user say to activate your skill?), and the interaction model (what kind of input does your skill require and what user intents (e.g. look up a record, or create a Case in Salesforce) is your skill looking for)?
+Some of the other steps are crucial, for example the wake word (what word does the user say to activate your skill?), and the interaction model (what kind of input does your skill require and what user intents (e.g. look up a record, or create a Case in Salesforce) is your skill looking for)? The more complex the model, the more elaborate your APEX handler should be. A lot of the handling can be outsourced to Amazon though, if you use a Dialog model.
 
-In the git repo you will find the JSON definition of the model (AlexaModel.json) that can be used with the provided APEX Sample Skill (classes/SampleSkill.cls). The model you create ultimately defines the APEX code you need to write to interact with it. The more complex the model, the more elaborate your APEX handler should be. A lot of the handling can be outsourced to Amazon though, if you use a Dialog model.
-
-Alexa allows you to define a Dialog model (currently in beta), Dialogs put more of the control of the interaction between Alexa and the user inside the model, and therefore generally require less APEX code. For example, you can let the model handle reprompting for required slots and determine completion of an Intent. AlexaForce supports both a Dialog model (using Directives) and a simpler JSON model (like the SampleSkill).
+Dialogs put more of the control of the interaction between Alexa and the user inside the model, and therefore generally require less APEX code. For example, you can let the model handle reprompting for required slots and determine completion of an Intent. AlexaForce supports both a Dialog model (using Directives) and a simpler JSON model (like the SampleSkill).
 
 The following parts are required to wire up the Alexa model with your Salesforce skill.
 
@@ -95,7 +93,6 @@ To implement the handling of the Alexa requests on your Salesforce org, you will
 
 You can find a basic example here: [Basic APEX Sample Code](samples/basic). It includes comments to get you up and running. If you use the [model from the basic example](samples/AlexaModel.json), the SampleSkill.cls should work instantly. For an overview of all sample code, go to [Code Samples](samples/). 
 
-
 Go to the Setup menu. Find Build -> Develop -> Apex Classes and create a new Apex Class extending the alexaforce.AlexaForce class.
 
 # Step 5: Activate your skill!
@@ -103,13 +100,15 @@ Go to the Custom Metadata Types section of the Setup menu in Salesforce, under B
 
 ![alt text](https://alexaforce-sdk-dev-ed--c.eu8.content.force.com/servlet/servlet.ImageServer?id=0150N000006TBXz&oid=00D0N000000h00x "Sample Skill")
 
-Enabling Debug Mode will generate log entries per request in the custom object Request_Log__c. Each Request_Log__c has several child Log_Entry__c records containing information about the conversation. In your APEX class you can add logs yourself using the method createLog(String title, String message). Debug Mode must be enabled for createLog(String title, String msg) to actually output something!
+Enabling ***Debug Mode*** will generate log entries per request in the custom object Request_Log__c. Each Request_Log__c has several child Log_Entry__c records containing information about the conversation. In your APEX class you can add logs yourself using the method createLog(String title, String message). Debug Mode must be enabled for createLog(String title, String msg) to actually output something!
 
-Perform Security Checks is only required when you want to submit your skill for Certification. If you do, be aware that the current security checks are being performed on an unauthenticated Heroku.com endpoint (https://alexa-verifier.herokuapp.com/verify). The endpoint may be suspended at any time and no support is provided. You will have to take my word it's not storing any of the data passed to it. Unfortunately, Salesforce does not appear to be able to validate the certificate using APEX.
+***Perform Security Checks*** is only required when you want to submit your skill for Certification. If you do, be aware that the current security checks are being performed on an unauthenticated Heroku.com endpoint (https://alexa-verifier.herokuapp.com/verify). The endpoint may be suspended at any time and no support is provided. You will have to take my word it's not storing any of the data passed to it. Unfortunately, Salesforce does not appear to be able to validate the certificate using APEX.
 
 The good news is: You can host your own verification endpoint! To do so, you will need to implement the checks that are defined here: https://developer.amazon.com/docs/custom-skills/host-a-custom-skill-as-a-web-service.html. Take note that your endpoint does not need to perform the URL testing defined (port, path, host), AlexaForce does this part! 
 
-If you have your own verification endpoint, configure the endpoint appropriately in the custom meta data entry. You must also add this endpoint in Salesforce as a Remote Site in the Setup menu, at Administer -> Security Controls -> Remote Site Settings. An example of the required verification REST service is included in this git repo (alexa-verifier), in Node.js.
+If you have your own verification endpoint, configure the endpoint appropriately in the custom meta data entry. You must also add this endpoint in Salesforce as a Remote Site in the Setup menu, at Administer -> Security Controls -> Remote Site Settings. An example of the required verification REST service is included in this git repo (alexa-verifier), in Node.js. 
+
+AlexaForce supports authentication with a fixed or generated (by APEX) Bearer token, sent to the verification service as Authorisation header. For more information, see the [Token Provider Documentation](docs/TokenGenerator.md)
 
 # Test!
 Your skill should now work. Enable the skill in your companion app. This companion app is also available in your browser, under Alexa -> Alexa Voice Service in the Amazon Developer portal. 
