@@ -1,7 +1,7 @@
 # AlexaForce Release Notes #
 
 ## May 2018 ##
-* Documentation improved and [moved to md-files on Github](TokenGenerator.md)
+* Documentation improved and [moved to md-files on Github](README.md)
 * Added missing text node to alexaforce.Model.AlexaCard.
 * New property in model: alexaForce.Model.AlexaAddress.
 * AlexaForce properties restructured. Opened up SystemInfo (of type alexaforce.Model.AlexaSystem) property, that contains most of the contextual data, including tokens for the developer to use when making e.g. list requests and information about the device, user and application. Also added AlexaUserInfo (redundant from the SystemInfo), containing the user as known to Alexa, and SessionInfo, containing session information (not custom session data, this is found in SessionData).
