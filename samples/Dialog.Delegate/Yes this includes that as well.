@@ -1,0 +1,16 @@
+Yes this includes that as well.
+Ok. So, here's my follow up.
+
+Let's say I offer a defense tool. This tool allows players to register an account on my website. They can copy/paste things into this tool (e.g. troops, incoming attacks etc.), which is all legal, assuming they use no browser-plugins to help passing this data to the tool. The tool lists these in a back-end and admins can view the data (e.g. the troops and incoming attacks). So far, all legal.
+
+But now assume this tool creates a "dummy" account on every server it works on. The users of the tool never know about it, since this happens in the background, all autonomously by the provider of the tool. This dummy account is used to poll the Travian server in question, automatically, to fetch the several top 100's (e.g. to find the experience count of a hero, or the attacker score of a player). Then this tool enriches it's data (put in there in legally by the users) with this dummy account's data (which is illegal).
+
+Now....in this scenario... WHO is operating illegally and WHO should suffer consequences?
+
+Only the coder of the tool, creating the dummy account in question (which may easily remain undetected)? Or the end-users of the system, who benefit from this illegal script, but are (mostly) unaware of it?
+​
+Banning just the dummy account (if it gets detected), does not solve the issue: Alliances who use this tool WILL use the illegally obtained data for their benefit. Beyond this, obviously the script/tool will just create a new dummy account.
+
+Obviously, I am talking about Travian-ally-tools -​ which polls hero-experience points at set intervals. This is impossible legally to my best knowledge. The tool is used by MANY alliances. They all benefit from illegal operations. Banning all the players using this system however would be unreasonable. Banning the dummy accounts (which I assume the tool uses), would not make any difference.
+
+Forwarding me to the MH with this type of question obviously won't work. I tried it there. Got forwarded to the community (here) and to the admins (by email). Both to no avail so far. It seems to be a question Travian has no answer to itself.

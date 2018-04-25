@@ -11,9 +11,16 @@ Not anymore. AlexaForce let's you define Alexa Skills, straight on your Salesfor
 
 The AlexaForce SDK is available for beta testing by installing the managed package.
 
-For developer orgs: https://login.salesforce.com/packaging/installPackage.apexp?p0=04t0N000000SDvB
+*** Update 25 April 2018 ***
+New beta version of the managed package has been released, *May 2018*. 
 
-For sandbox orgs: https://test.salesforce.com/packaging/installPackage.apexp?p0=04t0N000000SDvB
+The new versions are found here:
+
+For developer orgs: https://login.salesforce.com/packaging/installPackage.apexp?p0=04t0N000000SDvG
+
+For sandbox orgs: https://login.salesforce.com/packaging/installPackage.apexp?p0=04t0N000000SDvG
+
+It contains several fixes and adds several new features. You can find them in the [AlexaForce May 2018 Release Notes](docs/RELEASENOTES.md) 
 
 # Pre-requisites
 You will need a Salesforce developer org and an Amazon developer account for this.
@@ -30,9 +37,9 @@ Once you have performed these steps, any new skills you create on the same Sales
 # Step 1: Install the managed package
 Log in to your developer or sandbox org and install the package.
 
-For developer orgs: https://login.salesforce.com/packaging/installPackage.apexp?p0=04t0N000000SDvB
+For developer orgs: https://login.salesforce.com/packaging/installPackage.apexp?p0=04t0N000000SDvG
 
-For sandbox orgs: https://test.salesforce.com/packaging/installPackage.apexp?p0=04t0N000000SDvB
+For sandbox orgs: https://login.salesforce.com/packaging/installPackage.apexp?p0=04t0N000000SDvG
 
 # Step 2: Configure a Salesforce site
 In Salesforce, enter the Setup menu and find the option Build -> Develop -> Sites.
@@ -86,9 +93,8 @@ Add this endpoint as a remote site at Administer -> Security Controls -> Remote 
 # Step 4: Create the APEX class in Salesforce
 To implement the handling of the Alexa requests on your Salesforce org, you will need to write an APEX class which extends alexaforce.AlexaForce. 
 
-You can find an example in the classes folder of this git repo. It includes comments to get you up and running. If you used the model from this git repo (AlexaModel.json), the SampleSkill.cls should work instantly.
+You can find a basic example here: [Basic APEX Sample Code](samples/basic). It includes comments to get you up and running. If you use the [model from the basic example](samples/AlexaModel.json), the SampleSkill.cls should work instantly. For an overview of all sample code, go to [Code Samples](samples/). 
 
-Additional examples can be found in the samples/ directory of the repository.
 
 Go to the Setup menu. Find Build -> Develop -> Apex Classes and create a new Apex Class extending the alexaforce.AlexaForce class.
 
@@ -113,45 +119,4 @@ Test your skill using your Echo device, if you have one, or in the browser in th
 Modify the APEX code and Alexa should immediately produce the changed response. 
 
 # AlexaForce APEX API Reference
-Here's a brief summary of the information available inside your APEX handler class from the extended AlexaForce class.
-
-## alexaforce.AlexaForce 
-### Properties
-```
-global alexaforce.SessionDataManager SessionData; // Use to set and get session data
-global alexaforce.DirectiveManager Directives; // Use to return Directives
-global String applicationId; 
-global alexaforce.Alexa_Skill__mdt alexaSkillConfig; // Contains your custom meta data entry
-global alexaforce.AuthUser authUser; // Contains all basic openid properties, e.g. authUser.user_id and authUser.email, null if no account linking or  authentication failure 
-global String userId; // Contains the Alexa user id
-global String requestId; // Contains the request id
-```
-### Methods
-```
-global virtual alexaforce.Model.AlexaResponseBody handleRequest(alexaforce.Model.AlexaRequest request); // Must be implemented for your skill
-global void createLog(String title, String msg); // Use to write log entries inside your skill
-```
-## alexaforce.SessionDataManager
-### Methods
-```
-global void setSessionAttribute(String key, Object value); // Adds a session data entry. E.g. SessionData.setSessionAttribute('InteractionCount', 1);
-global void removeSessionAttribute(String key); // Removes the session attribute. 
-global Object getSessionAttribute(String key); // Fetches a session attribute. E.g. Integer count = (Integer) SessionData.getSessionAttribute(InteractionCount);
-global Map<String, Object> getSessionAttributes(); // Returns the full map of current session attributes.
-```
-## alexaforce.DirectiveManager
-### Methods
-```
-global void setDirective(alexaforce.Model.AlexaDirective directive, List<alexaforce.Model.AlexaSlot> slots); // Sets a response Directive with Slots
-global void setDirective(alexaforce.Model.AlexaDirective directive); // Sets a response Directive without slots
-global void removeDirective(alexaforce.Model.AlexaDirective directive);  // Removes the directive from the response
-global Map<alexaforce.Model.AlexaDirective, List<alexaforce.Model.AlexaSlot>> getDirectives(); // Returns a full list of all current Directives in queue.
-```
-
-
-
-
-
-
-
-
+The documentation has been updated and can now be found here [AlexaForce Documentation](docs/README.md)
