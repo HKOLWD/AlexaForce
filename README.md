@@ -11,7 +11,7 @@ Not anymore. AlexaForce let's you define Alexa Skills, straight on your Salesfor
 
 The AlexaForce SDK is available for beta testing by installing the managed package.
 
-*** Update 25 April 2018 ***
+***Update 25 April 2018***
 New beta version of the managed package has been released, *May 2018*. 
 
 The new versions are found here:
