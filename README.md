@@ -108,7 +108,7 @@ The good news is: You can host your own verification endpoint! To do so, you wil
 
 If you have your own verification endpoint, configure the endpoint appropriately in the custom meta data entry. You must also add this endpoint in Salesforce as a Remote Site in the Setup menu, at Administer -> Security Controls -> Remote Site Settings. An example of the required verification REST service is included in this git repo (alexa-verifier), in Node.js. 
 
-AlexaForce supports authentication with a fixed or generated (by APEX) Bearer token, sent to the verification service as Authorisation header. For more information, see the [Token Provider Documentation](docs/TokenGenerator.md)
+AlexaForce supports authentication with a fixed or generated (by APEX) Bearer token, sent to the verification service as Authorisation header. For more information, see the [Token Provider Documentation](docs/TokenGenerator.md). After setting up the token, make sure to configure it in your alexaforce.Alexa_Skill__mdt
 
 # Test!
 Your skill should now work. Enable the skill in your companion app. This companion app is also available in your browser, under Alexa -> Alexa Voice Service in the Amazon Developer portal. 
