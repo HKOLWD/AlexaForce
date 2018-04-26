@@ -16,9 +16,9 @@ New beta version of the managed package has been released, *May 2018*.
 
 The new versions are found here:
 
-For developer orgs: https://login.salesforce.com/packaging/installPackage.apexp?p0=04t0N000000SDvG
+For developer orgs: https://login.salesforce.com/packaging/installPackage.apexp?p0=04t0N0000010j5s
 
-For sandbox orgs: https://login.salesforce.com/packaging/installPackage.apexp?p0=04t0N000000SDvG
+For sandbox orgs: https://login.salesforce.com/packaging/installPackage.apexp?p0=04t0N0000010j5s
 
 It contains several fixes and adds several new features. You can find them in the [AlexaForce May 2018 Release Notes](docs/RELEASENOTES.md) 
 
@@ -37,9 +37,9 @@ Once you have performed these steps, any new skills you create on the same Sales
 # Step 1: Install the managed package
 Log in to your developer or sandbox org and install the package.
 
-For developer orgs: https://login.salesforce.com/packaging/installPackage.apexp?p0=04t0N000000SDvG
+For developer orgs: https://login.salesforce.com/packaging/installPackage.apexp?p0=04t0N0000010j5s
 
-For sandbox orgs: https://login.salesforce.com/packaging/installPackage.apexp?p0=04t0N000000SDvG
+For sandbox orgs: https://login.salesforce.com/packaging/installPackage.apexp?p0=04t0N0000010j5s
 
 # Step 2: Configure a Salesforce site
 In Salesforce, enter the Setup menu and find the option Build -> Develop -> Sites.
