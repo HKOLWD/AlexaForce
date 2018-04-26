@@ -15,7 +15,7 @@ server.use(restify.bodyParser());
 server.post('/verify',
     function(req, res, next) {
 
-        //console.log('## headers '+JSON.stringify(req.headers));
+        console.log('## Bearer? '+JSON.stringify(req.headers.authorization));
         return next();
     },
     function(req, res, next) {
@@ -23,6 +23,10 @@ server.post('/verify',
         certUrl = req.headers.signaturecertchainurl;
         signature = req.headers.signature;
         body = req.body;
+        if(!body) {
+            console.log('### No body. Returning false');
+            return false;        
+        }
         verifier(certUrl, signature, body, function(er) {
             if (er) {
                 console.log('### RETURNING FALSE:'+JSON.stringify(er));
