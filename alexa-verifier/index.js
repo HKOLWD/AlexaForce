@@ -15,31 +15,29 @@ server.use(restify.bodyParser());
 server.post('/verify',
     function(req, res, next) {
 
-        console.log('## Bearer? '+JSON.stringify(req.headers.authorization));
+        console.log('## Bearer: '+JSON.stringify(req.headers.authorization));
         return next();
     },
     function(req, res, next) {
-        var request = JSON.parse(req.body);
-        certUrl = req.headers.signaturecertchainurl;
-        signature = req.headers.signature;
-        body = req.body;
-        if(!body) {
+        if(!req.body) {
             console.log('### No body. Returning false');
-            return false;        
-        }
-        verifier(certUrl, signature, body, function(er) {
-            if (er) {
-                console.log('### RETURNING FALSE:'+JSON.stringify(er));
-                res.send(false);
-            } else {
-                console.log('### RETURNING TRUE');
-                res.send(true);
-            }
-        });
+            res.send(false);
+        } else {
+            var request = JSON.parse(req.body);
+            var certUrl = req.headers.signaturecertchainurl;
+            var signature = req.headers.signature;
+            var body = req.body;
 
+            verifier(certUrl, signature, body, function(er) {
+                if (er) {
+                    console.log('### RETURNING FALSE:'+JSON.stringify(er));
+                    res.send(false);
+                } else {
+                    console.log('### RETURNING TRUE');
+                    res.send(true);
+                }
+            });
+        }
         return next();
     }
 );
-
-
-
