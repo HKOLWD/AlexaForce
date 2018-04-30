@@ -20,19 +20,19 @@ private alexaforce.Model.AlexaResponseBody getDefaultResponse(alexaforce.Model.A
 ```
 The following properties are available on the responsebody.
 
-** alexaforce.Model.AlexaSpeechResponse outputSpeech **
+## alexaforce.Model.AlexaSpeechResponse outputSpeech ##
 Holds the spoken response by Alexa. See [AlexaSpeechResponse Reference](../AlexaSpeechResponse.md)
 
-** alexaforce.Model.AlexaCard card **
+## alexaforce.Model.AlexaCard card ##
 Holds a card, which will be sent to the companion app. Can contain several media types.
 
-** alexaforce.Model.AlexaReprompt reprompt **
+## alexaforce.Model.AlexaReprompt reprompt ##
 If the user does not respond, Alexa will send this as a reminder she's waiting for input
 
-** Boolean shouldEndSession **
+## Boolean shouldEndSession ##
 Manage this boolean carefully. Alexa will need the skill to be re-invoked after ending the session. Session data will be preserved, see [SessionDataManager Reference](SessionDataManager.md)
 
-** alexaforce.Model.AlexaDirective[] directives **
+## alexaforce.Model.AlexaDirective[] directives ##
 This property should not be used directly. Manage directives with the inherited [DirectiveManager](DirectiveManager.md)
 
 
