@@ -7,3 +7,5 @@
 [alexaforce.Model.AlexaSession](AlexaSession.md)
 
 [alexaforce.Model.AlexaAddress](AlexaAddress.md)
+
+[alexaforce.Model.AlexaResponseBody](AlexaResponseBody.md)
