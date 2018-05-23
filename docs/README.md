@@ -75,12 +75,12 @@ System.assertEquals(AlexaSkillConfig.alexaforce__Application_Id__c, applicationI
 
 ## Inherited Methods ##
 ### alexaforce.Model.AlexaAddress getFullAddress() ###
-Returns ```null``` in case of insufficient permissions, or other errors. See [PermissionManager Reference](../Permissions.md).
+Returns ```null``` in case of insufficient permissions, or other errors. See [PermissionManager Reference](Permissions.md).
 
 Returns an [alexaforce.Model.AlexaAddress](Model/AlexaAddress.md) when successfull.
 
 ### alexaforce.Model.AlexaAddress getPostalCode() ###
-Returns ```null``` in case of insufficient permissions, or other errors. See [PermissionManager Reference](../Permissions.md).
+Returns ```null``` in case of insufficient permissions, or other errors. See [PermissionManager Reference](Permissions.md).
 
 Returns an [alexaforce.Model.AlexaAddress](Model/AlexaAddress.md) when successfull.
 
