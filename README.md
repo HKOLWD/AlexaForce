@@ -98,19 +98,22 @@ You can find a basic example here: [Basic APEX Sample Code](samples/basic). It i
 Go to the Setup menu. Find Build -> Develop -> Apex Classes and create a new Apex Class extending the alexaforce.AlexaForce class.
 
 # Step 5: Activate your skill!
+## Set up Custom meta data
 Go to the Custom Metadata Types section of the Setup menu in Salesforce, under Build -> Develop -> Custom Metadata Types. Find the Alexa Skill type and click "Manage records". Create a new Alexa Skill entry for your skill. Use your application id from step 3, and fill in the Apex Class name to match the class from step 4. If you just want to test the example, this should be sufficient. See the screenshot below for an example.
 
 ![alt text](https://alexaforce-sdk-dev-ed--c.eu8.content.force.com/servlet/servlet.ImageServer?id=0150N000006TBXz&oid=00D0N000000h00x "Sample Skill")
 
+### Debug Mode
 Enabling ***Debug Mode*** will generate log entries per request in the custom object Request_Log__c. Each Request_Log__c has several child Log_Entry__c records containing information about the conversation. In your APEX class you can add logs yourself using the method createLog(String title, String message). Debug Mode must be enabled for createLog(String title, String msg) to actually output something!
 
 ![alt text](https://alexaforce-sdk-dev-ed--c.eu8.content.force.com/servlet/servlet.ImageServer?id=0150N000006UY6m&oid=00D0N000000h00x "Request Logs")
 
+### Skill Certification
 ***Perform Security Checks*** is only required when you want to submit your skill for Certification. If you do, be aware that the current security checks are being performed on an unauthenticated Heroku.com endpoint (https://alexa-verifier.herokuapp.com/verify). The endpoint may be suspended at any time and no support is provided. You will have to take my word it's not storing any of the data passed to it. Unfortunately, Salesforce does not appear to be able to validate the certificate using APEX.
 
 The good news is: You can host your own verification endpoint! To do so, you will need to implement the checks that are defined here: https://developer.amazon.com/docs/custom-skills/host-a-custom-skill-as-a-web-service.html. Take note that your endpoint does not need to perform the URL testing defined (port, path, host), AlexaForce does this part! 
 
-If you have your own verification endpoint, configure the endpoint appropriately in the custom meta data entry. You must also add this endpoint in Salesforce as a Remote Site in the Setup menu, at Administer -> Security Controls -> Remote Site Settings. An example of the required verification REST service is included in this git repo (alexa-verifier), in Node.js. 
+If you have your own verification endpoint, configure the endpoint appropriately in the custom meta data entry. You must also add this endpoint in Salesforce as a Remote Site in the Setup menu, at Administer -> Security Controls -> Remote Site Settings. An example of the required verification REST service is included in this git repo ([Verfication service example](alexa-verifier)), in Node.js. 
 
 AlexaForce supports authentication with a fixed or generated (by APEX) Bearer token, sent to the verification service as Authorization header. For more information, see the [Token Provider Documentation](docs/TokenGenerator.md). After setting up the token, make sure to configure it in your alexaforce.Alexa_Skill__mdt
 
