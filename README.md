@@ -28,7 +28,9 @@ To use AlexaForce, the following steps need to be performed to start building Al
 Once you have performed these steps, any new skills you create on the same Salesforce org, only require you to repeat steps 3, 4 and 5.
 
 # Step 1: Install the managed package
-Log in to your developer or sandbox org and install the package from https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000EtDfJUAV
+Log in to your Salesforce org and install the package from https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000EtDfJUAV
+
+Since you will be writing APEX later, you probably want to generate a new Sandbox, so you can write your skill code there. The managed package can not be deployed from a sandbox to a production instance, so if you install the package on a sandbox, make sure to install it on production too, before deploying your skill.
 
 # Step 2: Configure a Salesforce site
 In Salesforce, enter the Setup menu and find the option Build -> Develop -> Sites.
