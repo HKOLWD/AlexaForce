@@ -30,7 +30,7 @@ Once you have performed these steps, any new skills you create on the same Sales
 # Step 1: Install the managed package
 Log in to your Salesforce org and install the package from https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000EtDfJUAV
 
-Since you will be writing APEX later, you probably want to generate a new Sandbox, so you can write your skill code there. The managed package can not be deployed from a sandbox to a production instance, so if you install the package on a sandbox, make sure to install it on production too, before deploying your skill.
+Since you will be writing APEX later, you probably want to generate a new Sandbox after installing the package, so you can write your skill code there. The managed package can not be deployed from a sandbox to a production instance, so if you install the package on a sandbox, make sure to install it on production too, before deploying your skill.
 
 # Step 2: Configure a Salesforce site
 In Salesforce, enter the Setup menu and find the option Build -> Develop -> Sites.
