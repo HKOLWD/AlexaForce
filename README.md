@@ -11,21 +11,14 @@ Not anymore. AlexaForce let's you define Alexa Skills, straight on your Salesfor
 
 The AlexaForce SDK is available for beta testing by installing the managed package.
 
-# Update 25 April 2018
-New beta version of the managed package has been released, *May 2018*. 
+# Update 16 June 2018
+AlexaForce passed security review and has now been listed on the AppExchange under the name Alexa Skill Builder for Salesforce. You can find the package here https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000EtDfJUAV 
 
-The new versions are found here:
-
-For developer orgs: https://login.salesforce.com/packaging/installPackage.apexp?p0=04t0N0000010j6b
-
-For sandbox orgs: https://login.salesforce.com/packaging/installPackage.apexp?p0=04t0N0000010j6b
-
-It contains several fixes and adds several new features. You can find them in the [AlexaForce May 2018 Release Notes](docs/RELEASENOTES.md) 
 
 # Pre-requisites
-You will need a Salesforce developer org and an Amazon developer account for this.
+You will need a Salesforce org and an Amazon developer account for this.
 
-To sign up for a Developer org, visit: https://developer.salesforce.com
+To sign up for a free Salesforce Developer org, visit: https://developer.salesforce.com
 
 Get an Amazon dev account here: https://developer.amazon.com
 
@@ -35,11 +28,7 @@ To use AlexaForce, the following steps need to be performed to start building Al
 Once you have performed these steps, any new skills you create on the same Salesforce org, only require you to repeat steps 3, 4 and 5.
 
 # Step 1: Install the managed package
-Log in to your developer or sandbox org and install the package.
-
-For developer orgs: https://login.salesforce.com/packaging/installPackage.apexp?p0=04t0N0000010j6b
-
-For sandbox orgs: https://login.salesforce.com/packaging/installPackage.apexp?p0=04t0N0000010j6b
+Log in to your developer or sandbox org and install the package from https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000EtDfJUAV
 
 # Step 2: Configure a Salesforce site
 In Salesforce, enter the Setup menu and find the option Build -> Develop -> Sites.
