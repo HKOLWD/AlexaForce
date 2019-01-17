@@ -14,7 +14,7 @@ System.assertEquals(5454,context.AudioPlayer.offsetInMilliseconds);
 **Example JSON Request:**
 ```
 "context": {
-    "System": {
+    "System_x": {
       "apiAccessToken": "some-token",
       "apiEndpoint": "https:\/\/api.amazonalexa.com",
       "device": {
