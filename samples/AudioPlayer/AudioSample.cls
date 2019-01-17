@@ -1,4 +1,4 @@
-global class TpoPodcastSkill extends alexaforce.AlexaForce {
+global class AudioSample extends alexaforce.AlexaForce {
     global override alexaforce.Model.AlexaResponseBody handleRequest(alexaforce.Model.AlexaRequest req) {
         alexaforce.Model.AlexaResponseBody resp;
         createLog('##In Handler## Received '+req.type, JSON.serializePretty(req));
