@@ -11,6 +11,9 @@ Not anymore. AlexaForce let's you define Alexa Skills, straight on your Salesfor
 
 The AlexaForce SDK is available installing the managed package.
 
+# Update 23 January 2019
+New version of the package is now listed on the AppExchange!
+
 # Update 17 January 2019
 A new version is available that includes fixes to the AlexaForce.Model and AlexaForce. Extra properties were added to the model and you will now inherit the AlexaForce.context property, which contains information about the [alexaforce.Model.AlexaContext](docs/Model/AlexaContext.md), which is needed for audio skills. Also this release contains some logging improvements and a LEX app. The documentation has been updated and [AlexaForce Audio Sample](samples/AudioPlayer/AudioSample.cls) is now available in this GIT repo.
 
