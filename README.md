@@ -17,7 +17,7 @@ New version of the package is now listed on the AppExchange!
 # Update 17 January 2019
 A new version is available that includes fixes to the AlexaForce.Model and AlexaForce. Extra properties were added to the model and you will now inherit the AlexaForce.context property, which contains information about the [alexaforce.Model.AlexaContext](docs/Model/AlexaContext.md), which is needed for audio skills. Also this release contains some logging improvements and a LEX app. The documentation has been updated and [AlexaForce Audio Sample](samples/AudioPlayer/AudioSample.cls) is now available in this GIT repo.
 
-The AppExchange listing has not been updated yet, so for now, install the new (1.2) version, with this link https://login.salesforce.com/packaging/installPackage.apexp?p0=04t0N0000010j6l 
+The AppExchange listing has not been updated yet, so for now, install the new (1.21) version, with this link https://login.salesforce.com/packaging/installPackage.apexp?p0=04t0N000001E1mA 
 
 # Update 16 June 2018
 AlexaForce passed security review and has now been listed on the AppExchange under the name Alexa Skill Builder for Salesforce. You can find the package here https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000EtDfJUAV 
