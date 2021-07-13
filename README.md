@@ -108,7 +108,7 @@ Enabling ***Debug Mode*** will generate log entries per request in the custom ob
 ![alt text](https://alexaforce-sdk-dev-ed--c.eu8.content.force.com/servlet/servlet.ImageServer?id=0150N000006UY6m&oid=00D0N000000h00x "Request Logs")
 
 ### Skill Certification
-***Perform Security Checks*** is only required when you want to submit your skill for Certification. Turning it off, will skip the checks. Yout skill would fail Amazon certification. 
+***Perform Security Checks*** is only required when you want to submit your skill for Certification. Turning it off, will skip the checks. Your skill would fail Amazon certification. 
 
 If you use the demo verification endpoint that's packaged with Alexa Skill Builder, be aware that the security checks are being performed on an unauthenticated Heroku.com endpoint (https://alexa-verifier.herokuapp.com/verify). The endpoint may be suspended at any time and no support is provided. You will have to take my word it's not storing any of the data passed to it. Unfortunately, Salesforce does not appear to be able to validate the certificate using APEX.
 
